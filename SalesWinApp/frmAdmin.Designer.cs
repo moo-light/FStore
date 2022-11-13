@@ -28,12 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnMember = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnMember
+            // 
+            this.btnMember.Location = new System.Drawing.Point(19, 127);
+            this.btnMember.Margin = new System.Windows.Forms.Padding(10);
+            this.btnMember.Name = "btnMember";
+            this.btnMember.Padding = new System.Windows.Forms.Padding(5);
+            this.btnMember.Size = new System.Drawing.Size(148, 47);
+            this.btnMember.TabIndex = 0;
+            this.btnMember.Text = "Member Management";
+            this.btnMember.UseVisualStyleBackColor = true;
+            this.btnMember.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.Location = new System.Drawing.Point(236, 127);
+            this.btnProduct.Margin = new System.Windows.Forms.Padding(10);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Padding = new System.Windows.Forms.Padding(5);
+            this.btnProduct.Size = new System.Drawing.Size(148, 47);
+            this.btnProduct.TabIndex = 1;
+            this.btnProduct.Text = "Product Management";
+            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Location = new System.Drawing.Point(19, 194);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(10);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Padding = new System.Windows.Forms.Padding(5);
+            this.btnOrder.Size = new System.Drawing.Size(148, 47);
+            this.btnOrder.TabIndex = 2;
+            this.btnOrder.Text = "Order Management";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(236, 194);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(10);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Padding = new System.Windows.Forms.Padding(5);
+            this.btnReport.Size = new System.Drawing.Size(148, 47);
+            this.btnReport.TabIndex = 3;
+            this.btnReport.Text = "Report Management";
+            this.btnReport.UseVisualStyleBackColor = true;
+            // 
+            // frmAdmin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmAdmin";
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(403, 262);
+            this.Controls.Add(this.btnReport);
+            this.Controls.Add(this.btnOrder);
+            this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.btnMember);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmAdmin";
+            this.Text = "Admin Management";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Button btnMember;
+        private Button btnProduct;
+        private Button btnOrder;
+        private Button btnReport;
     }
 }
