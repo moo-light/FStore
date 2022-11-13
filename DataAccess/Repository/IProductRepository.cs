@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    internal class IProductRepository
+    public interface IProductRepository
     {
+        IEnumerable<Product> GetAlls();
+        Product Get(int id);
+        void Create(Product p);
+        void Update(Product p);
+        void Remove(Product p);
     }
 }

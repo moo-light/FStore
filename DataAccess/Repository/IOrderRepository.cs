@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    internal class IOrderRepository
+    public interface IOrderRepository
     {
+        IEnumerable<Member> GetAlls();
+        IEnumerable<Member> Get(int id);
+        void Create(Member o);
+        void Update(Member o);
+        void Remove(Member o);
     }
 }
