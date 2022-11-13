@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,11 @@ namespace DataAccess.Repository
 {
     public class OrderRepository : IOrderRepository
     {
-        private FStoreDBContext _db;
+        private FstoreDbContext _db;
 
-        public MemberRepository(FStoreDBContext db)
+        public OrderRepository(FstoreDbContext db)
         {
-            _db = new FStoreDBContext();
+            _db = new FstoreDbContext();
         }
         public void Create(Order o)
         {
@@ -25,12 +26,12 @@ namespace DataAccess.Repository
 
         public Order Get(int id)
         {
-            throw new NotImplementedException();
+            return this.GetAlls().FirstOrDefault(x => x.orderID == id);
         }
 
         public IEnumerable<Order> GetAlls()
         {
-            throw new NotImplementedException();
+            return this._db.Orders.ToList();
         }
 
         public void Remove(Order o)

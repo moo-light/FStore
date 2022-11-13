@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace DataAccess.Repository
 {
     public class MemberRepository : IMemberRepository
     {
-        private FStoreDBContext _db;
+        private FstoreDbContext _db;
 
-        public MemberRepository(FStoreDBContext db)
+        public MemberRepository(FstoreDbContext db)
         {
-            _db = new FStoreDBContext();
+            _db = new FstoreDbContext();
         }
 
         public IEnumerable<Member> GetAlls()

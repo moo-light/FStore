@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess
+namespace DataAccess.Repository.dao
 {
-    internal class MemberDAO
+    public class ProductDAO
     {
     }
 }

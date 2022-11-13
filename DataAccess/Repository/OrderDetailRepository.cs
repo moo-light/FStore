@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,11 @@ namespace DataAccess.Repository
 {
     public class OrderDetailRepository : IOrderDetailRepository
     {
-        private FStoreDBContext _db;
+        private FstoreDbContext _db;
 
-        public MemberRepository(FStoreDBContext db)
+        public OrderDetailRepository(FstoreDbContext db)
         {
-            _db = new FStoreDBContext();
+            _db = new FstoreDbContext();
         }
        
 

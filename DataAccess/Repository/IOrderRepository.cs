@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace DataAccess.Repository
 {
     public interface IOrderRepository
     {
-        IEnumerable<Member> GetAlls();
-        IEnumerable<Member> Get(int id);
-        void Create(Member o);
-        void Update(Member o);
-        void Remove(Member o);
+        IEnumerable<Order> GetAlls();
+        Order Get(int id);
+        void Create(Order o);
+        void Update(Order o);
+        void Remove(Order o);
     }
 }

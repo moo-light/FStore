@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Diagnostics.Metrics;
 
 public interface IMemberRepository

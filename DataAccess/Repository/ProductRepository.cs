@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,24 +9,24 @@ namespace DataAccess.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        private FStoreDBContext _db;
+        private FstoreDbContext _db;
 
-        public MemberRepository(FStoreDBContext db)
+        public ProductRepository(FstoreDbContext db)
         {
-            _db = new FStoreDBContext();
+            _db = new FstoreDbContext();
         }
         public void Create(Product p)
         {
             if (p is not null)
             {
-                _db.Add(o);
+                _db.Add(p);
                 _db.SaveChanges();
             }
         }
 
         public Product Get(int id)
         {
-            return this.GetAlls().SingleOrDefault(x => x.productId == id);
+            return this.GetAlls().SingleOrDefault(x => x.ProductId == id);
         }
 
         public IEnumerable<Product> GetAlls()
@@ -37,7 +38,7 @@ namespace DataAccess.Repository
         {
             if (p is not null)
             {
-                _db.Remove(o);
+                _db.Remove(p);
                 _db.SaveChanges();
             }
         }
@@ -46,7 +47,7 @@ namespace DataAccess.Repository
         {
             if (p is not null)
             {
-                _db.Update(o);
+                _db.Update(p);
                 _db.SaveChanges();
             }
         }
