@@ -20,7 +20,6 @@ namespace SalesWinApp
     {
         public frmLogin()
         {
-            txtPassword.PasswordChar = '*';
             InitializeComponent();
         }
 
