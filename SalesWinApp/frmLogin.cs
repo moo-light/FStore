@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Repository.dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace SalesWinApp
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+     
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

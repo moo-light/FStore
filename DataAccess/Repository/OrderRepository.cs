@@ -26,7 +26,7 @@ namespace DataAccess.Repository
 
         public Order Get(int id)
         {
-            return this.GetAlls().FirstOrDefault(x => x.orderID == id);
+            return this.GetAlls().FirstOrDefault(x => x.OrderId == id);
         }
 
         public IEnumerable<Order> GetAlls()

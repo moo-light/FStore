@@ -19,7 +19,7 @@ namespace DataAccess.Repository
 
         public OrderDetail Get(int orderID, int productID)
         {
-            return GetAlls().SingleOrDefault(x => x.orderID == orderID && x.productID == productID);
+            return GetAlls().SingleOrDefault(x => x.OrderId == orderID && x.ProductId == productID);
         }
 
         public IEnumerable<OrderDetail> GetAlls()

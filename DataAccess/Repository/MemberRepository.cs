@@ -12,7 +12,7 @@ namespace DataAccess.Repository
     {
         private FstoreDbContext _db;
 
-        public MemberRepository(FstoreDbContext db)
+        public MemberRepository()
         {
             _db = new FstoreDbContext();
         }
