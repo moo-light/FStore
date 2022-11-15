@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace SalesWinApp
 {
     public partial class frmUser : Form
     {
+        private Member user;
+
         public frmUser()
         {
             InitializeComponent();
+        }
+
+        public frmUser(Member user)
+        {
+            this.user = user;
         }
     }
 }

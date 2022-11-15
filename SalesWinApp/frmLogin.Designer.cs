@@ -54,22 +54,25 @@
             this.lbPassword.TabIndex = 0;
             this.lbPassword.Text = "Password";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(118, 97);
+            this.txtEmail.Location = new System.Drawing.Point(118, 68);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(183, 23);
-            this.txtEmail.TabIndex = 1;            // 
-            // textBox2
+            this.txtEmail.TabIndex = 1;
             // 
-            this.txtPassword.Location = new System.Drawing.Point(118, 68);
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(118, 97);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(183, 23);
             this.txtPassword.TabIndex = 2;
+            txtPassword.PasswordChar = '*';
+
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(118, 146);
+            this.btnLogin.Location = new System.Drawing.Point(118, 126);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 3;
@@ -79,7 +82,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(226, 146);
+            this.btnClose.Location = new System.Drawing.Point(226, 126);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 4;
