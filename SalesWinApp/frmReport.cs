@@ -26,17 +26,17 @@ namespace SalesWinApp
         }
         private void LoadOrder(DateTime startDate, DateTime endDate)
         {
-            var orders = from order in _repository.GetOrders()
+            var orders = (from order in _repository.GetOrders()
                          where order.OrderDate >=startDate && order.OrderDate <= endDate
                          select new {Member = order.Member.Email,
                                      OrderID = order.OrderId,
                                      OrderDate = order.OrderDate,
                                      Sales = this._repository.GetTotalBill(order.OrderId)
-                         };
+                         }).ToList().OrderByDescending(o => o.Sales);
 
             _source = new BindingSource();
             _source.DataSource = null;
-            _source.DataSource = orders.ToList();
+            _source.DataSource = orders;
             dgvReport.DataSource = _source;
         }
 
