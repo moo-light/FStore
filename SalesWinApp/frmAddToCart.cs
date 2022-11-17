@@ -22,23 +22,26 @@ namespace SalesWinApp
         private Product selectedProduct = null;
         private CartObject cartObj = new();
         private BindingSource _source = new BindingSource();
-        
+
+        public Member User { get; internal set; }
+
         public frmAddToCart()
         {
             InitializeComponent();
         }
 
         private void cboProducts_SelectedIndexChanged(object sender, EventArgs e)
-        { selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
+        {
+            selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
             txtProductName.Text = selectedProduct.ProductName;
-            txtProductPrice.Text= selectedProduct.UnitPrice.ToString();
+            txtProductPrice.Text = selectedProduct.UnitPrice.ToString();
             lbStock.Text = selectedProduct.UnitsInStock.ToString();
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
         {
             cartObj = new CartObject();
-            var proName = _products.Select(x=>x.ProductName).ToArray();
+            var proName = _products.Select(x => x.ProductName).ToArray();
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
             cboProducts.SelectedIndex = 0;
@@ -69,7 +72,8 @@ namespace SalesWinApp
                     productList.Add(product);
                 }
                 var dataList = from pd in productList
-                               select new { 
+                               select new
+                               {
                                    ProductID = pd.ProductId,
                                    ProductName = pd.ProductName,
                                    UnitPrice = pd.UnitPrice,
@@ -80,9 +84,9 @@ namespace SalesWinApp
                 BindingSource source = new BindingSource();
                 source.DataSource = null;
                 source.DataSource = dataList.ToList();
-                source.Add(false);
                 dgvCart.DataSource = source;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Add to cart. " + ex.Message);
             }
@@ -96,7 +100,10 @@ namespace SalesWinApp
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-           
+                foreach (int productID in cartObj.Cart.Keys)
+                {
+
+                }
         }
     }
 }

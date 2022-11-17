@@ -19,18 +19,18 @@ namespace DataAccess.Repository
 
        
 
-        public OrderDetail Get(int orderID, int productID)
+        public Order Get(int orderID, int productID)
         {
             return GetAlls().SingleOrDefault(x => x.OrderId == orderID && x.ProductId == productID);
         }
 
-        public IEnumerable<OrderDetail> GetAlls()
+        public IEnumerable<Order> GetAlls()
         {
             return _db.OrderDetails.ToList();
         }
 
        
-        public void Create(OrderDetail o)
+        public void Create(Order o)
         {
             if (o is not null)
             {
@@ -38,7 +38,18 @@ namespace DataAccess.Repository
                 _db.SaveChanges();
             }
         }
-        public void Update(OrderDetail o)
+        public void CreateNoSave(Order o)
+        {
+            if (o is not null)
+            {
+                _db.Add(o);
+            }
+        }
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
+        }
+        public void Update(Order o)
         {
             if (o is not null)
             {
@@ -46,7 +57,7 @@ namespace DataAccess.Repository
                 _db.SaveChanges();
             }
         }
-        public void Remove(OrderDetail o)
+        public void Remove(Order o)
         {
             if (o is not null)
             {

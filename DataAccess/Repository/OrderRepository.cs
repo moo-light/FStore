@@ -30,7 +30,17 @@ namespace DataAccess.Repository
                 _db.SaveChanges();
             }
         }
-
+        public void CreateNoSave(Order o)
+        {
+            if (o is not null)
+            {
+                _db.Add(o);
+            }
+        }
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
+        }
         public Order Get(int id)
         {
             return this._db.Orders.Include("OrderDetails").Include("Member").FirstOrDefault(x => x.OrderId == id);
@@ -68,9 +78,9 @@ namespace DataAccess.Repository
         {
             this._db = new FstoreDbContext();
            Order order = this.Get(OrderID);
-           List<OrderDetail> orderDetails = order.OrderDetails.ToList();
+           List<Order> orderDetails = order.OrderDetails.ToList();
            decimal? totalBill = 0;
-           foreach (OrderDetail detail in orderDetails)
+           foreach (Order detail in orderDetails)
            {
              totalBill += detail.UnitPrice * (decimal)(1 - detail.Discount) * detail.Quantity;
             }
