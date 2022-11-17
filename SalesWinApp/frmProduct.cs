@@ -30,7 +30,7 @@ namespace SalesWinApp
         }
         private void LoadProduct()
         {
-            var products = _repository.GetAllProduct().Select(
+            var products = _repository.AllProduct.Select(
                 p => new {
                     ProductId = p.ProductId,
                     ProductName = p.ProductName,
@@ -48,7 +48,7 @@ namespace SalesWinApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var products = _repository.GetAllProduct().Select(
+            var products = _repository.AllProduct.Select(
                 p => new {
                     ProductId = p.ProductId,
                     ProductName = p.ProductName,
@@ -151,7 +151,7 @@ namespace SalesWinApp
             {
                 UpdateOrAdd = true,
                 ProductRepository = _repository,
-                Product = _repository.GetAllProduct().ToList()[dgvProduct.CurrentRow.Index]
+                Product = _repository.AllProduct.ToList()[dgvProduct.CurrentRow.Index]
             };
             if (frmAddProduct.ShowDialog() == DialogResult.OK)
             {
@@ -165,7 +165,7 @@ namespace SalesWinApp
             var confirmResult = MessageBox.Show("Are you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
-                var account = _repository.GetAllProduct().ToList()[dgvProduct.CurrentRow.Index];
+                var account = _repository.AllProduct.ToList()[dgvProduct.CurrentRow.Index];
                 _repository.Remove(account);
                 LoadProduct();
             }
