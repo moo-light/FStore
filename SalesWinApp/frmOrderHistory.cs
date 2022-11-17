@@ -15,7 +15,8 @@ namespace SalesWinApp
     {
        private  OrderRepository _order = new OrderRepository();
         public BindingSource _src;
-
+        private frmOrderDetail _orderDetail;
+        public int orderID_detail;
         public frmOrderHistory()
         {
             InitializeComponent();
@@ -33,11 +34,19 @@ namespace SalesWinApp
         }
 
      private void   LoadOrderHistory() {
-            var order = _order.GetAlls();
+            var order = _order.GetAlls().Where(a => a.OrderId == orderID_detail);
             _src = new BindingSource();
         _src.DataSource = order;
             dgvOrderHistory.DataSource = null;
             dgvOrderHistory.DataSource = _src;
+        }
+
+        private void btnViewDetail_Click(object sender, EventArgs e)
+        {
+           _orderDetail = new frmOrderDetail();
+            _orderDetail.Show();
+            var check = _order.GetAlls().ToArray()[_src.Position];
+            orderID_detail = check.OrderId;
         }
     }
 }

@@ -11,10 +11,12 @@ namespace DataAccess.Repository
     {
         private FstoreDbContext _db;
 
-        public OrderDetailRepository(FstoreDbContext db)
+        public OrderDetailRepository()
         {
             _db = new FstoreDbContext();
         }
+
+
        
 
         public OrderDetail Get(int orderID, int productID)
