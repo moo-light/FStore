@@ -43,7 +43,6 @@
             this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMember.Location = new System.Drawing.Point(12, 12);
             this.dgvMember.Name = "dgvMember";
-            this.dgvMember.ReadOnly = true;
             this.dgvMember.RowHeadersWidth = 51;
             this.dgvMember.RowTemplate.Height = 29;
             this.dgvMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
