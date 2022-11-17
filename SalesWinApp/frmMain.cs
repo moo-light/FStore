@@ -39,14 +39,6 @@ namespace SalesWinApp
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
@@ -150,8 +142,17 @@ namespace SalesWinApp
             }
         }
 
-        private void toolStripMenuItem16_Click(object sender, EventArgs e)
+        private void UpdateProfile(object sender, EventArgs e)
         {
+            frmUserProfile frmUserProfile = new frmUserProfile()
+            {
+                User = User
+                
+            };
+            if (frmUserProfile.ShowDialog() == DialogResult.OK)
+            {
+                //change something
+            }
 
         }
     }
