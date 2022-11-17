@@ -80,6 +80,7 @@ namespace SalesWinApp
                 BindingSource source = new BindingSource();
                 source.DataSource = null;
                 source.DataSource = dataList.ToList();
+                source.Add(false);
                 dgvCart.DataSource = source;
             } catch (Exception ex)
             {
@@ -91,6 +92,11 @@ namespace SalesWinApp
         private void btnRemove_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
