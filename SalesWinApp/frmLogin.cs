@@ -60,9 +60,10 @@ namespace SalesWinApp
             }
             else
             {
-                frmUser frmUser = new frmUser(user);
+                frmManager frmManager = new frmManager();
+              frmManager.User = user;
                 this.Hide();
-                frmUser.Show();
+                frmManager.Show();
             }
         }
 

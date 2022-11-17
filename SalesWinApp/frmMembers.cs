@@ -14,8 +14,10 @@ namespace SalesWinApp
     public partial class frmMembers : Form
     {
         public IMemberRepository _memberRepository = new MemberRepository();
-
+        //private frmAddMember frmAddMember = new frmAddMember();
         private BindingSource _bindingSrc;
+        public frmAddMember _frmAddMember ;
+        private frmAdmin frmAdmin;
         public frmMembers()
         {
             InitializeComponent();
@@ -32,12 +34,7 @@ namespace SalesWinApp
             LoadMemberAccount(context); 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-        }
-
+      
         private void txtSearchMem_TextChanged(object sender, EventArgs e)
         {
 
@@ -76,6 +73,20 @@ namespace SalesWinApp
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _frmAddMember = new frmAddMember();
+            this.Close();
+            _frmAddMember.Show();
+            
+            
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
 
         }

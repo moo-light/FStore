@@ -36,7 +36,6 @@
             // 
             // btnMember
             // 
-
             this.btnMember.Location = new System.Drawing.Point(22, 169);
             this.btnMember.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnMember.Name = "btnMember";
@@ -48,9 +47,8 @@
             this.btnMember.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnProduct
-
+            // 
             this.btnProduct.Location = new System.Drawing.Point(270, 169);
-
             this.btnProduct.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -62,9 +60,7 @@
             // 
             // btnOrder
             // 
-
             this.btnOrder.Location = new System.Drawing.Point(22, 259);
-
             this.btnOrder.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -75,11 +71,7 @@
             // 
             // btnReport
             // 
-
-            //this.btnReport.Location = new System.Drawing.Point(251, 151);
-
             this.btnReport.Location = new System.Drawing.Point(270, 259);
-
             this.btnReport.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -93,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(461, 349);
+            this.ClientSize = new System.Drawing.Size(461, 348);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnProduct);
