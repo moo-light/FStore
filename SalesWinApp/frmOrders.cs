@@ -21,7 +21,12 @@ namespace SalesWinApp
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private DataGridView GetDataGridView1()
+        {
+            return dataGridView1;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e, DataGridView dataGridView1)
         {
             using (SqlConnection sqlConnect = new SqlConnection(path))
             {
