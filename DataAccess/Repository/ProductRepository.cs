@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace DataAccess.Repository
     {
         private FstoreDbContext _db;
 
-        public ProductRepository(FstoreDbContext db)
+        public ProductRepository()
         {
             _db = new FstoreDbContext();
         }
@@ -31,7 +32,12 @@ namespace DataAccess.Repository
 
         public IEnumerable<Product> GetAllProduct()
         {
-            return this._db.Products.ToList();
+            return this._db.Products.Include("Category").ToList();
+        }
+
+        public IEnumerable<Category> GetAllCategory()
+        {
+            return this._db.Categories.ToList();
         }
 
 
