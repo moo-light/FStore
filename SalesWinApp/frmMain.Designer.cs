@@ -34,8 +34,6 @@
             this.btnViewMember = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewMember = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnViewProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNewProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.btnViewOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewOrder = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,8 +84,8 @@
             this.mnuAdmin.Location = new System.Drawing.Point(0, 0);
             this.mnuAdmin.MdiWindowListItem = this.windowsMenu;
             this.mnuAdmin.Name = "mnuAdmin";
-            this.mnuAdmin.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mnuAdmin.Size = new System.Drawing.Size(738, 28);
+            this.mnuAdmin.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.mnuAdmin.Size = new System.Drawing.Size(843, 30);
             this.mnuAdmin.TabIndex = 0;
             this.mnuAdmin.Text = "MenuStrip";
             // 
@@ -99,7 +97,7 @@
             this.tsmMember.Image = global::SalesWinApp.Properties.Resources.icons8_customer_26;
             this.tsmMember.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.tsmMember.Name = "tsmMember";
-            this.tsmMember.Size = new System.Drawing.Size(84, 24);
+            this.tsmMember.Size = new System.Drawing.Size(99, 24);
             this.tsmMember.Text = "&Member";
             // 
             // btnViewMember
@@ -107,7 +105,7 @@
             this.btnViewMember.ImageTransparentColor = System.Drawing.Color.Black;
             this.btnViewMember.Name = "btnViewMember";
             this.btnViewMember.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.btnViewMember.Size = new System.Drawing.Size(214, 22);
+            this.btnViewMember.Size = new System.Drawing.Size(266, 26);
             this.btnViewMember.Text = "&View Member List";
             this.btnViewMember.Click += new System.EventHandler(this.ShowMembers);
             // 
@@ -117,33 +115,17 @@
             this.btnNewMember.Name = "btnNewMember";
             this.btnNewMember.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.M)));
-            this.btnNewMember.Size = new System.Drawing.Size(214, 22);
+            this.btnNewMember.Size = new System.Drawing.Size(266, 26);
             this.btnNewMember.Text = "&New Member";
             this.btnNewMember.Click += new System.EventHandler(this.AddMember);
             // 
             // tsmProduct
             // 
-            this.tsmProduct.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnViewProduct,
-            this.btnNewProduct});
             this.tsmProduct.Image = global::SalesWinApp.Properties.Resources.icons8_package_64;
             this.tsmProduct.Name = "tsmProduct";
-            this.tsmProduct.Size = new System.Drawing.Size(81, 24);
+            this.tsmProduct.Size = new System.Drawing.Size(94, 24);
             this.tsmProduct.Text = "&Product";
-            // 
-            // btnViewProduct
-            // 
-            this.btnViewProduct.Name = "btnViewProduct";
-            this.btnViewProduct.Size = new System.Drawing.Size(165, 22);
-            this.btnViewProduct.Text = "View Product List";
-            this.btnViewProduct.Click += new System.EventHandler(this.ShowProducts);
-            // 
-            // btnNewProduct
-            // 
-            this.btnNewProduct.Name = "btnNewProduct";
-            this.btnNewProduct.Size = new System.Drawing.Size(165, 22);
-            this.btnNewProduct.Text = "New Product";
-            this.btnNewProduct.Click += new System.EventHandler(this.AddProduct);
+            this.tsmProduct.Click += new System.EventHandler(this.tsmProduct_Click);
             // 
             // tsmOrder
             // 
@@ -152,20 +134,20 @@
             this.btnNewOrder});
             this.tsmOrder.Image = global::SalesWinApp.Properties.Resources.icons8_purchase_order_50;
             this.tsmOrder.Name = "tsmOrder";
-            this.tsmOrder.Size = new System.Drawing.Size(69, 24);
+            this.tsmOrder.Size = new System.Drawing.Size(81, 24);
             this.tsmOrder.Text = "&Order";
             // 
             // btnViewOrder
             // 
             this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(173, 22);
+            this.btnViewOrder.Size = new System.Drawing.Size(217, 26);
             this.btnViewOrder.Text = "View Order History";
             this.btnViewOrder.Click += new System.EventHandler(this.ShowOrders);
             // 
             // btnNewOrder
             // 
             this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.Size = new System.Drawing.Size(173, 22);
+            this.btnNewOrder.Size = new System.Drawing.Size(217, 26);
             this.btnNewOrder.Text = "New Order";
             this.btnNewOrder.Click += new System.EventHandler(this.AddOrder);
             // 
@@ -174,13 +156,13 @@
             this.tsReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnViewReport});
             this.tsReport.Name = "tsReport";
-            this.tsReport.Size = new System.Drawing.Size(54, 24);
+            this.tsReport.Size = new System.Drawing.Size(68, 24);
             this.tsReport.Text = "&Report";
             // 
             // btnViewReport
             // 
             this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(158, 22);
+            this.btnViewReport.Size = new System.Drawing.Size(199, 26);
             this.btnViewReport.Text = "View Report List";
             this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
             // 
@@ -189,13 +171,13 @@
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
-            this.toolsMenu.Size = new System.Drawing.Size(46, 24);
+            this.toolsMenu.Size = new System.Drawing.Size(58, 24);
             this.toolsMenu.Text = "&Tools";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // windowsMenu
@@ -207,41 +189,41 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(68, 24);
+            this.windowsMenu.Size = new System.Drawing.Size(84, 24);
             this.windowsMenu.Text = "&Windows";
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.cascadeToolStripMenuItem.Text = "&Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -250,17 +232,17 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 501);
+            this.statusStrip.Location = new System.Drawing.Point(0, 671);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 17, 0);
-            this.statusStrip.Size = new System.Drawing.Size(738, 22);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(843, 26);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
             // mnuManager
@@ -272,11 +254,11 @@
             this.toolStripMenuItem7,
             this.toolStripMenuItem12,
             this.toolStripMenuItem14});
-            this.mnuManager.Location = new System.Drawing.Point(0, 28);
+            this.mnuManager.Location = new System.Drawing.Point(0, 30);
             this.mnuManager.MdiWindowListItem = this.toolStripMenuItem7;
             this.mnuManager.Name = "mnuManager";
-            this.mnuManager.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mnuManager.Size = new System.Drawing.Size(738, 28);
+            this.mnuManager.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.mnuManager.Size = new System.Drawing.Size(843, 30);
             this.mnuManager.TabIndex = 4;
             this.mnuManager.Text = "MenuStrip";
             // 
@@ -286,14 +268,14 @@
             this.btnViewProfile});
             this.toolStripMenuItem1.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(53, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 24);
             this.toolStripMenuItem1.Text = "&Profile";
             // 
             // btnViewProfile
             // 
             this.btnViewProfile.ImageTransparentColor = System.Drawing.Color.Black;
             this.btnViewProfile.Name = "btnViewProfile";
-            this.btnViewProfile.Size = new System.Drawing.Size(180, 22);
+            this.btnViewProfile.Size = new System.Drawing.Size(171, 26);
             this.btnViewProfile.Text = "&View Profile";
             this.btnViewProfile.Click += new System.EventHandler(this.UpdateProfile);
             // 
@@ -305,7 +287,7 @@
             this.toolStripMenuItem2.Image = global::SalesWinApp.Properties.Resources.icons8_customer_26;
             this.toolStripMenuItem2.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(84, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(99, 24);
             this.toolStripMenuItem2.Text = "&Member";
             // 
             // toolStripMenuItem3
@@ -313,7 +295,7 @@
             this.toolStripMenuItem3.ImageTransparentColor = System.Drawing.Color.Black;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(265, 26);
             this.toolStripMenuItem3.Text = "&View Member List";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.ShowMembers);
             // 
@@ -323,7 +305,7 @@
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.M)));
-            this.btnNewAccount.Size = new System.Drawing.Size(214, 22);
+            this.btnNewAccount.Size = new System.Drawing.Size(265, 26);
             this.btnNewAccount.Text = "&New Account";
             this.btnNewAccount.Click += new System.EventHandler(this.AddMember);
             // 
@@ -333,13 +315,13 @@
             this.toolStripMenuItem8});
             this.toolStripMenuItem7.Image = global::SalesWinApp.Properties.Resources.icons8_purchase_order_50;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(69, 24);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(81, 24);
             this.toolStripMenuItem7.Text = "&Order";
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(173, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(217, 26);
             this.toolStripMenuItem8.Text = "View Order History";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.ShowOrders);
             // 
@@ -348,13 +330,13 @@
             this.toolStripMenuItem12.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem13});
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(46, 24);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(58, 24);
             this.toolStripMenuItem12.Text = "&Tools";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(116, 22);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(144, 26);
             this.toolStripMenuItem13.Text = "&Options";
             // 
             // toolStripMenuItem14
@@ -366,7 +348,7 @@
             this.toolStripMenuItem19,
             this.toolStripMenuItem20});
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(68, 24);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(84, 24);
             this.toolStripMenuItem14.Text = "&Windows";
             // 
             // btnMNewMember
@@ -375,49 +357,49 @@
             this.btnMNewMember.Name = "btnMNewMember";
             this.btnMNewMember.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.M)));
-            this.btnMNewMember.Size = new System.Drawing.Size(186, 22);
+            this.btnMNewMember.Size = new System.Drawing.Size(231, 26);
             this.btnMNewMember.Text = "&Cascade";
             this.btnMNewMember.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem17
             // 
             this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            this.toolStripMenuItem17.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(231, 26);
             this.toolStripMenuItem17.Text = "Tile &Vertical";
             this.toolStripMenuItem17.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // toolStripMenuItem18
             // 
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(231, 26);
             this.toolStripMenuItem18.Text = "Tile &Horizontal";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // toolStripMenuItem19
             // 
             this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(231, 26);
             this.toolStripMenuItem19.Text = "C&lose All";
             this.toolStripMenuItem19.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // toolStripMenuItem20
             // 
             this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-            this.toolStripMenuItem20.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem20.Size = new System.Drawing.Size(231, 26);
             this.toolStripMenuItem20.Text = "&Arrange Icons";
             this.toolStripMenuItem20.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 523);
+            this.ClientSize = new System.Drawing.Size(843, 697);
             this.Controls.Add(this.mnuManager);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mnuAdmin);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuAdmin;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
@@ -453,8 +435,6 @@
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
-        private ToolStripMenuItem btnViewProduct;
-        private ToolStripMenuItem btnNewProduct;
         private ToolStripMenuItem btnViewOrder;
         private ToolStripMenuItem btnNewOrder;
         private ToolStripMenuItem tsReport;

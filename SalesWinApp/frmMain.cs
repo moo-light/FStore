@@ -100,18 +100,6 @@ namespace SalesWinApp
            
         }
 
-        private void ShowProducts(object sender, EventArgs e)
-        {
-            var childForm = new frmProduct() { };
-            childForm.MdiParent = this;
-            childForm.Show();
-        }
-
-        private void AddProduct(object sender, EventArgs e)
-        {
-
-        }
-
         private void ShowOrders(object sender, EventArgs e)
         {
             var childForm = new frmOrders() { };
@@ -154,6 +142,13 @@ namespace SalesWinApp
                 //change something
             }
 
+        }
+
+        private void tsmProduct_Click(object sender, EventArgs e)
+        {
+            var childForm = new frmProduct() { };
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }
