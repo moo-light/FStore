@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label lbStock;
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnViewCart = new System.Windows.Forms.Button();
             this.dgvCart = new System.Windows.Forms.DataGridView();
@@ -42,18 +43,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbStock
-            // 
-            lbStock.AutoSize = true;
-            lbStock.Location = new System.Drawing.Point(622, 94);
-            lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(45, 19);
-            lbStock.TabIndex = 8;
-            lbStock.Text = "Stock:";
-            // 
             // btnAddCart
             // 
-            this.btnAddCart.Location = new System.Drawing.Point(337, 15);
+            this.btnAddCart.Location = new System.Drawing.Point(337, 18);
             this.btnAddCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(137, 29);
@@ -64,7 +56,7 @@
             // 
             // btnViewCart
             // 
-            this.btnViewCart.Location = new System.Drawing.Point(39, 73);
+            this.btnViewCart.Location = new System.Drawing.Point(39, 80);
             this.btnViewCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewCart.Name = "btnViewCart";
             this.btnViewCart.Size = new System.Drawing.Size(86, 39);
@@ -76,27 +68,27 @@
             // dgvCart
             // 
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCart.Location = new System.Drawing.Point(39, 158);
+            this.dgvCart.Location = new System.Drawing.Point(39, 127);
             this.dgvCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.RowTemplate.Height = 25;
-            this.dgvCart.Size = new System.Drawing.Size(785, 296);
+            this.dgvCart.Size = new System.Drawing.Size(804, 296);
             this.dgvCart.TabIndex = 3;
             // 
             // btnCreateOrder
             // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(259, 73);
+            this.btnCreateOrder.Location = new System.Drawing.Point(724, 434);
             this.btnCreateOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(119, 39);
             this.btnCreateOrder.TabIndex = 2;
-            this.btnCreateOrder.Text = "Create Order";
+            this.btnCreateOrder.Text = "Make Order";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             // 
             // cboProducts
             // 
             this.cboProducts.FormattingEnabled = true;
-            this.cboProducts.Location = new System.Drawing.Point(39, 15);
+            this.cboProducts.Location = new System.Drawing.Point(39, 19);
             this.cboProducts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboProducts.Name = "cboProducts";
             this.cboProducts.Size = new System.Drawing.Size(291, 27);
@@ -105,7 +97,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(622, 18);
+            this.txtProductName.Location = new System.Drawing.Point(622, 19);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(202, 26);
@@ -113,7 +105,7 @@
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.Location = new System.Drawing.Point(622, 54);
+            this.txtProductPrice.Location = new System.Drawing.Point(622, 53);
             this.txtProductPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(202, 26);
@@ -122,7 +114,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(565, 94);
+            this.label.Location = new System.Drawing.Point(561, 90);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(45, 19);
             this.label.TabIndex = 5;
@@ -140,28 +132,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(568, 60);
+            this.label2.Location = new System.Drawing.Point(561, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 19);
             this.label2.TabIndex = 7;
             this.label2.Text = "Price:";
             // 
-
             // lbStock
             // 
             lbStock.AutoSize = true;
-            lbStock.Location = new System.Drawing.Point(544, 74);
+            lbStock.Location = new System.Drawing.Point(622, 90);
             lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(13, 15);
+            lbStock.Size = new System.Drawing.Size(17, 19);
             lbStock.TabIndex = 9;
             lbStock.Text = "0";
             // 
-
             // frmAddToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 483);
+            this.ClientSize = new System.Drawing.Size(889, 488);
             this.Controls.Add(lbStock);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -175,7 +165,7 @@
             this.Controls.Add(this.cboProducts);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAddToCart";
-            this.Text = "frmAddToCart";
+            this.Text = "Add To Cart";
             this.Load += new System.EventHandler(this.frmOrderAddDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.ResumeLayout(false);
