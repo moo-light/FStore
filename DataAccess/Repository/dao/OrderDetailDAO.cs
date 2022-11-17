@@ -9,7 +9,8 @@ namespace DataAccess.Repository.dao
 {
     public class OrderDetailDAO
     {
-        internal static Boolean CreateOrderDetail(int orderId, int productID, int quantity, IOrderDetailRepository _orderDetail)
+        internal static Boolean CreateOrderDetail(int orderId, int productID, int quantity, IOrderDetailRepository _orderDetail
+            ,IProductRepository _product)
         {   
             var orderDetail = new OrderDetail()
             {

@@ -35,7 +35,7 @@ namespace SalesWinApp
             selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
             txtProductName.Text = selectedProduct.ProductName;
             txtProductPrice.Text = selectedProduct.UnitPrice.ToString();
-            lbStock.Text = selectedProduct.UnitsInStock.ToString();
+            lbStockk.Text = selectedProduct.UnitsInStock.ToString();
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace SalesWinApp
             }
             cartObj.AddToCart(selectedProduct.ProductId);
             selectedProduct.UnitsInStock -= 1;
-            lbStock.Text = selectedProduct.UnitsInStock.ToString();
+            lbStockk.Text = selectedProduct.UnitsInStock.ToString();
             
 
         }
@@ -113,7 +113,7 @@ namespace SalesWinApp
             {
                 MessageBox.Show("Create Order Successful!");
                 cartObj = new CartObject();
-                LoadCartGridView();
+                dgvCart.DataSource = null;
             }
             else
             {

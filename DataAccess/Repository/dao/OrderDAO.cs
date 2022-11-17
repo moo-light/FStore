@@ -11,6 +11,7 @@ namespace DataAccess.Repository.dao
     {
         private static IOrderRepository _order = new OrderRepository();
         private static IOrderDetailRepository _orderDetail = new OrderDetailRepository();
+        private static IProductRepository _product = new ProductRepository();
 
         public static Boolean CreateOrder(Dictionary<int, int> cart, Member user,decimal freight = 0)
         {
@@ -23,7 +24,7 @@ namespace DataAccess.Repository.dao
             _order.Create(order);
 
             foreach (int productID in cart.Keys)
-                if(OrderDetailDAO.CreateOrderDetail(order.OrderId, productID, cart[productID],_orderDetail) != true)
+                if(OrderDetailDAO.CreateOrderDetail(order.OrderId, productID, cart[productID],_orderDetail,_product) != true)
                 {
 
                     return false;

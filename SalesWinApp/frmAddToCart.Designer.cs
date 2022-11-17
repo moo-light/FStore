@@ -39,18 +39,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
-            lbStock = new System.Windows.Forms.Label();
+            lbStockk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbStock
-            // 
-            lbStock.AutoSize = true;
-            lbStock.Location = new System.Drawing.Point(544, 71);
-            lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(13, 15);
-            lbStock.TabIndex = 9;
-            lbStock.Text = "0";
             // 
             // btnAddCart
             // 
@@ -104,20 +95,16 @@
             // 
             this.txtProductName.Location = new System.Drawing.Point(544, 15);
             this.txtProductName.Name = "txtProductName";
-
             this.txtProductName.ReadOnly = true;
-            this.txtProductName.Size = new System.Drawing.Size(202, 26);
-
+            this.txtProductName.Size = new System.Drawing.Size(202, 23);
             this.txtProductName.TabIndex = 4;
             // 
             // txtProductPrice
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(544, 42);
             this.txtProductPrice.Name = "txtProductPrice";
-
             this.txtProductPrice.ReadOnly = true;
-            this.txtProductPrice.Size = new System.Drawing.Size(202, 26);
-
+            this.txtProductPrice.Size = new System.Drawing.Size(202, 23);
             this.txtProductPrice.TabIndex = 4;
             // 
             // label
@@ -157,21 +144,21 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // lbStock
+            // lbStockk
             // 
-            lbStock.AutoSize = true;
-            lbStock.Location = new System.Drawing.Point(622, 90);
-            lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(17, 19);
-            lbStock.TabIndex = 9;
-            lbStock.Text = "0";
+            lbStockk.AutoSize = true;
+            lbStockk.Location = new System.Drawing.Point(544, 71);
+            lbStockk.Name = "lbStockk";
+            lbStockk.Size = new System.Drawing.Size(13, 15);
+            lbStockk.TabIndex = 9;
+            lbStockk.Text = "0";
             // 
             // frmAddToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 385);
-            this.Controls.Add(lbStock);
+            this.Controls.Add(lbStockk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label);
@@ -203,7 +190,7 @@
         private Label label;
         private Label label1;
         private Label label2;
-        private Label lbStock;
+        private Label lbStockk;
         private Button btnRemove;
     }
 }
