@@ -150,5 +150,12 @@ namespace SalesWinApp
         {
 
         }
+
+        private void viewOrderHistoryToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var childForm = new frmOrderHistory();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
     }
 }
