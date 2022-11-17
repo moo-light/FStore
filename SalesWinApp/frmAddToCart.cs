@@ -57,7 +57,7 @@ namespace SalesWinApp
             cartObj.AddToCart(selectedProduct.ProductId);
             selectedProduct.UnitsInStock -= 1;
             lbStock.Text = selectedProduct.UnitsInStock.ToString();
-
+            
 
         }
 
@@ -101,9 +101,9 @@ namespace SalesWinApp
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
                 foreach (int productID in cartObj.Cart.Keys)
-                {
+            {
 
-                }
+            }
         }
     }
 }

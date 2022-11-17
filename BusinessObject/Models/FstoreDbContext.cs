@@ -22,7 +22,7 @@ public partial class FstoreDbContext : DbContext
 
     public virtual DbSet<Order> Orders { get; set; }
 
-    public virtual DbSet<Order> OrderDetails { get; set; }
+    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
@@ -104,7 +104,7 @@ public partial class FstoreDbContext : DbContext
                 .HasConstraintName("FK__Order__MemberId__2E1BDC42");
         });
 
-        modelBuilder.Entity<Order>(entity =>
+        modelBuilder.Entity<OrderDetail>(entity =>
         {
             entity.HasKey(e => new { e.OrderId, e.ProductId }).HasName("PK__OrderDet__08D097A32DE83FAB");
 

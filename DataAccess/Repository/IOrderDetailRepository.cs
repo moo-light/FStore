@@ -4,11 +4,11 @@ using System.Diagnostics.Metrics;
 
 public interface IOrderDetailRepository
 {
-    IEnumerable<Order> GetAlls();
-    Order Get(int orderID ,int productID);
-    void Create(Order o);
-    void Update(Order o);
-    void Remove(Order o);
-    void CreateNoSave(Order o);
+    IEnumerable<OrderDetail> GetAlls();
+    OrderDetail Get(int orderID ,int productID);
+    void Create(OrderDetail o);
+    void Update(OrderDetail o);
+    void Remove(OrderDetail o);
+    void CreateNoSave(OrderDetail o);
     void SaveChanges();
 }
