@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label lbStock;
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnViewCart = new System.Windows.Forms.Button();
             this.dgvCart = new System.Windows.Forms.DataGridView();
@@ -100,6 +101,7 @@
             this.txtProductName.Location = new System.Drawing.Point(622, 19);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductName.Name = "txtProductName";
+            this.txtProductName.ReadOnly = true;
             this.txtProductName.Size = new System.Drawing.Size(202, 26);
             this.txtProductName.TabIndex = 4;
             // 
@@ -108,6 +110,7 @@
             this.txtProductPrice.Location = new System.Drawing.Point(622, 53);
             this.txtProductPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.ReadOnly = true;
             this.txtProductPrice.Size = new System.Drawing.Size(202, 26);
             this.txtProductPrice.TabIndex = 4;
             // 
@@ -138,15 +141,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Price:";
             // 
-            // lbStock
-            // 
-            lbStock.AutoSize = true;
-            lbStock.Location = new System.Drawing.Point(622, 90);
-            lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(17, 19);
-            lbStock.TabIndex = 9;
-            lbStock.Text = "0";
-            // 
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(39, 431);
@@ -157,6 +151,15 @@
             this.btnRemove.Text = "Remove From Cart";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // lbStock
+            // 
+            lbStock.AutoSize = true;
+            lbStock.Location = new System.Drawing.Point(622, 90);
+            lbStock.Name = "lbStock";
+            lbStock.Size = new System.Drawing.Size(17, 19);
+            lbStock.TabIndex = 9;
+            lbStock.Text = "0";
             // 
             // frmAddToCart
             // 
