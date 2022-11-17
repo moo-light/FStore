@@ -18,7 +18,7 @@ namespace SalesWinApp
     {
 
         IEnumerable<Product> _products = ProductDAO.GetAlls();
-
+        IProductRepository _product = new ProductRepository();
         private Product selectedProduct = null;
         private CartObject cartObj = new();
         private BindingSource _source = new BindingSource();
@@ -32,7 +32,7 @@ namespace SalesWinApp
         { selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
             txtProductName.Text = selectedProduct.ProductName;
             txtProductPrice.Text= selectedProduct.UnitPrice.ToString();
-            lbStock.te
+            lbStock.Text = selectedProduct.UnitsInStock.ToString();
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
