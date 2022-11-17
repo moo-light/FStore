@@ -95,9 +95,9 @@ namespace SalesWinApp
         }
         private void ShowMembers(object sender, EventArgs e)
         {
-            var childForm = new frmMembers() { };
-            childForm.MdiParent = this;
-            childForm.Show();
+            //var childForm = new frmMembers() { };
+            //childForm.MdiParent = this;
+            //childForm.Show();
         }
 
         private void AddMember(object sender, EventArgs e)
@@ -132,6 +132,13 @@ namespace SalesWinApp
         private void frmMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewReport_Click(object sender, EventArgs e)
+        {
+            frmReport reportForm = new frmReport();
+            reportForm.MdiParent = this;
+            reportForm.Show();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace SalesWinApp
     public partial class frmAdmin : Form
     {
         private Member user;
-       private frmMembers frmMembers;
+       //private frmMembers frmMembers;
         public Member User { get => user; set => user = value; }
 
         public frmAdmin()
@@ -24,9 +24,9 @@ namespace SalesWinApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmMembers = new frmMembers();
-            this.Close();
-            frmMembers.ShowDialog();
+            //frmMembers = new frmMembers();
+            //this.Close();
+            //frmMembers.ShowDialog();
 
         }
 
@@ -52,9 +52,9 @@ namespace SalesWinApp
         }
         private void btnMember_Click(object sender, EventArgs e)
         {
-            frmMembers frmMembers = new frmMembers();
-            this.Hide();
-            frmMembers.Show();
+            //frmMembers frmMembers = new frmMembers();
+            //this.Hide();
+            //frmMembers.Show();
         }
     }
 }

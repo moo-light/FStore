@@ -31,10 +31,10 @@
             this.lbStartDate = new System.Windows.Forms.Label();
             this.lbEndDate = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvReport = new System.Windows.Forms.DataGridView();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
             // lbStartDate
@@ -57,22 +57,23 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(688, 43);
+            this.btnExport.Location = new System.Drawing.Point(660, 36);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(94, 28);
+            this.btnExport.Size = new System.Drawing.Size(128, 43);
             this.btnExport.TabIndex = 2;
-            this.btnExport.Text = "Export";
+            this.btnExport.Text = "Generate Report";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // dataGridView1
+            // dgvReport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 218);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReport.Location = new System.Drawing.Point(36, 92);
+            this.dgvReport.Name = "dgvReport";
+            this.dgvReport.RowHeadersWidth = 51;
+            this.dgvReport.RowTemplate.Height = 29;
+            this.dgvReport.Size = new System.Drawing.Size(812, 245);
+            this.dgvReport.TabIndex = 3;
             // 
             // dtpStartDate
             // 
@@ -80,6 +81,7 @@
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(174, 26);
             this.dtpStartDate.TabIndex = 4;
+            this.dtpStartDate.Value = new System.DateTime(2022, 11, 17, 0, 0, 0, 0);
             // 
             // dtpEndDate
             // 
@@ -95,14 +97,15 @@
             this.ClientSize = new System.Drawing.Size(890, 385);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvReport);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.lbEndDate);
             this.Controls.Add(this.lbStartDate);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmReport";
-            this.Text = "frmReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Report Statistic Sales";
+            this.Load += new System.EventHandler(this.frmReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +116,7 @@
         private Label lbStartDate;
         private Label lbEndDate;
         private Button btnExport;
-        private DataGridView dataGridView1;
+        private DataGridView dgvReport;
         private DateTimePicker dtpStartDate;
         private DateTimePicker dtpEndDate;
     }
