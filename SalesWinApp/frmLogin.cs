@@ -70,5 +70,10 @@ namespace SalesWinApp
         {
             System.Environment.Exit(1);
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
