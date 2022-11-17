@@ -15,14 +15,11 @@ namespace SalesWinApp
     {
         private Member user;
 
+        public Member User { get => user; set => user = value; }
+
         public frmAdmin()
         {
             InitializeComponent();
-        }
-
-        public frmAdmin(Member user)
-        {
-            this.user = user;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -31,6 +28,11 @@ namespace SalesWinApp
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
         {
 
         }
