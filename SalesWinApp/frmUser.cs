@@ -13,6 +13,7 @@ namespace SalesWinApp
 {
     public partial class frmUser : Form
     {
+        frmManager frmManager = new frmManager();   
         private Member user;
 
         public frmUser()
@@ -23,6 +24,22 @@ namespace SalesWinApp
         public frmUser(Member user)
         {
             this.user = user;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmManager.Show();
+        }
+
+        private void frmUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
