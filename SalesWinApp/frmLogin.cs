@@ -82,6 +82,7 @@ namespace SalesWinApp
         {
             txtEmail.Text = "admin@fstore.com";
             txtPassword.Text = "admin@@";
+            btnLogin_Click(sender,e);
         }
     }
 }
