@@ -36,10 +36,12 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.MaskedTextBox();
+            this.txtRePassword = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -110,13 +112,6 @@
             this.txtCity.Size = new System.Drawing.Size(203, 27);
             this.txtCity.TabIndex = 7;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(186, 273);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(203, 27);
-            this.txtPassword.TabIndex = 8;
-            // 
             // txtCompanyName
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(186, 97);
@@ -126,7 +121,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(137, 343);
+            this.btnUpdate.Location = new System.Drawing.Point(128, 397);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 10;
@@ -136,22 +131,49 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(274, 343);
+            this.btnCancel.Location = new System.Drawing.Point(269, 397);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 330);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 20);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Re-Password";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(186, 266);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(203, 27);
+            this.txtPassword.TabIndex = 14;
+            this.txtPassword.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtPassword_MaskInputRejected);
+            // 
+            // txtRePassword
+            // 
+            this.txtRePassword.Location = new System.Drawing.Point(186, 323);
+            this.txtRePassword.Name = "txtRePassword";
+            this.txtRePassword.Size = new System.Drawing.Size(203, 27);
+            this.txtRePassword.TabIndex = 15;
+            // 
             // frmUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 467);
+            this.Controls.Add(this.txtRePassword);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtCompanyName);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.txtEmail);
@@ -178,9 +200,11 @@
         private TextBox txtEmail;
         private TextBox txtCountry;
         private TextBox txtCity;
-        private TextBox txtPassword;
         private TextBox txtCompanyName;
         private Button btnUpdate;
         private Button btnCancel;
+        private Label label6;
+        private MaskedTextBox txtPassword;
+        private MaskedTextBox txtRePassword;
     }
 }

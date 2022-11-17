@@ -12,7 +12,7 @@ namespace SalesWinApp
 {
     public partial class frmAddMember : Form
     {
-        private frmMembers _mem = new frmMembers();
+        //private frmMembers _mem = new frmMembers();
         public frmAddMember()
         {
             InitializeComponent();
