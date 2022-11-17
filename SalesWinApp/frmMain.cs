@@ -1,4 +1,4 @@
-﻿using BusinessObject.Models;
+using BusinessObject.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +15,7 @@ namespace SalesWinApp
     {
         private int childFormNumber = 0;
 
+        private frmOrderHistory _order;
         public Member User { get; internal set; }
 
         public frmMain()
@@ -90,26 +91,14 @@ namespace SalesWinApp
         }
         private void ShowMembers(object sender, EventArgs e)
         {
-            //var childForm = new frmMembers() { };
-            //childForm.MdiParent = this;
-            //childForm.Show();
+            var childForm = new frmMember() { };
+            childForm.MdiParent = this;
+            childForm.Show();
         }
 
         private void AddMember(object sender, EventArgs e)
         {
            
-        }
-
-        private void ShowProducts(object sender, EventArgs e)
-        {
-            var childForm = new frmProduct() { };
-            childForm.MdiParent = this;
-            childForm.Show();
-        }
-
-        private void AddProduct(object sender, EventArgs e)
-        {
-
         }
 
         private void ShowOrders(object sender, EventArgs e)
@@ -156,11 +145,19 @@ namespace SalesWinApp
 
         }
 
+
         private void viewReport_Click(object sender, EventArgs e)
         {
             frmReport reportForm = new frmReport();
             reportForm.MdiParent = this;
             reportForm.Show();
+
+        private void viewOrderHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var childForm = new frmOrderHistory() { };
+            childForm.MdiParent = this;
+            childForm.Show();
+
         }
     }
 }

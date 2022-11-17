@@ -12,10 +12,12 @@ namespace DataAccess.Repository
     {
         private FstoreDbContext _db;
 
+
         //public OrderRepository(FstoreDbContext db) // xoa cai nay nha
         //{
         //    _db = new FstoreDbContext();
         //}
+
         public OrderRepository()
         {
             _db = new FstoreDbContext();
