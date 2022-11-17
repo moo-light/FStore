@@ -50,7 +50,25 @@ namespace SalesWinApp
             User.CompanyName= txtCompanyName.Text;
             User.Country = txtCountry.Text;
             User.Password = txtPassword.Text;
+            if (!txtPassword.Text.Equals(txtRePassword.Text)) {
+                MessageBox.Show("Password not match");
+            }
+            else { 
+            
             memberRepository.Update(User);
+                MessageBox.Show("Change Infomation Success");
+
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
