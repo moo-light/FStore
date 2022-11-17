@@ -32,13 +32,11 @@ namespace SalesWinApp
         { selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
             txtProductName.Text = selectedProduct.ProductName;
             txtProductPrice.Text= selectedProduct.UnitPrice.ToString();
-            lbStock.te
+            lbStock.Text = selectedProduct.UnitsInStock.ToString();
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
         {
-            
-
             var proName = _products.Select(x=>x.ProductName).ToArray();
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
@@ -46,7 +44,10 @@ namespace SalesWinApp
         }
 
         private void btnAddCart_Click(object sender, EventArgs e)
-        { 
+        {
+            if (cartObj == null) cartObj = new CartObject();
+            cartObj.AddToCart(selectedProduct.ProductId);
+
         }
 
         private void btnViewCart_Click(object sender, EventArgs e)

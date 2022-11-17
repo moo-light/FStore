@@ -9,7 +9,7 @@ namespace BusinessObject.CartObject
     public class CartObject
     {
         public Dictionary<int, int> Cart { get; set; }
-        void AddToCart(int productID,int amount = 1) {
+        public  void AddToCart(int productID,int amount = 1) {
             if(Cart.ContainsKey(productID)){
                 Cart[productID] += amount;
             }
@@ -18,7 +18,7 @@ namespace BusinessObject.CartObject
                 Cart.Add(productID, amount);
             }
         }
-        void RemoveFromCart(int productID,int amount = 1)
+        public void RemoveFromCart(int productID,int amount = 1)
         {
             if (Cart.ContainsKey(productID))
             {
