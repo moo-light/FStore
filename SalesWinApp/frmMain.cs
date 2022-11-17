@@ -68,7 +68,6 @@ namespace SalesWinApp
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +101,21 @@ namespace SalesWinApp
             {
                 childForm.Close();
             }
+        }
+
+        private void windowsMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeAllToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
