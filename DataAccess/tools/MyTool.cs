@@ -124,7 +124,7 @@ namespace DealersManagementProgram.tool
 
         public static string encryptData(string data)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
+            using MD5 md5 = new MD5CryptoServiceProvider();
 
             //compute hash from the bytes of text  
             md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(data));

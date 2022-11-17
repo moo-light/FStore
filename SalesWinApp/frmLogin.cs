@@ -51,19 +51,26 @@ namespace SalesWinApp
                 MessageBox.Show("Login Failed");
                 return;
             }
-            if (user.Role.Equals("admin"))
+            //if (user.Role.Equals("admin"))
+            //{
+            //    frmAdmin frmAdmin = new frmAdmin();
+            //    frmAdmin.User = user;
+            //    this.Hide();
+            //    frmAdmin.Show();
+            //}
+            //else
+            //{
+            //    frmUser frmUser = new frmUser(user);
+            //    this.Hide();
+            //    frmUser.Show();
+            //}
+            frmMain frmMain = new frmMain()
             {
-                frmAdmin frmAdmin = new frmAdmin();
-                frmAdmin.User = user;
-                this.Hide();
-                frmAdmin.Show();
-            }
-            else
-            {
-                frmUser frmUser = new frmUser(user);
-                this.Hide();
-                frmUser.Show();
-            }
+                
+            };
+            this.Hide();
+            frmMain.ShowDialog();
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
