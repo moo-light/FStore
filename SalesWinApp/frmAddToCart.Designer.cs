@@ -104,14 +104,20 @@
             // 
             this.txtProductName.Location = new System.Drawing.Point(544, 15);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(177, 23);
+
+            this.txtProductName.ReadOnly = true;
+            this.txtProductName.Size = new System.Drawing.Size(202, 26);
+
             this.txtProductName.TabIndex = 4;
             // 
             // txtProductPrice
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(544, 42);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(177, 23);
+
+            this.txtProductPrice.ReadOnly = true;
+            this.txtProductPrice.Size = new System.Drawing.Size(202, 26);
+
             this.txtProductPrice.TabIndex = 4;
             // 
             // label
@@ -150,6 +156,15 @@
             this.btnRemove.Text = "Remove From Cart";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // lbStock
+            // 
+            lbStock.AutoSize = true;
+            lbStock.Location = new System.Drawing.Point(622, 90);
+            lbStock.Name = "lbStock";
+            lbStock.Size = new System.Drawing.Size(17, 19);
+            lbStock.TabIndex = 9;
+            lbStock.Text = "0";
             // 
             // frmAddToCart
             // 

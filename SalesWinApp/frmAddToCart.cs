@@ -1,4 +1,4 @@
-﻿using BusinessObject.CartObject;
+using BusinessObject.CartObject;
 using BusinessObject.Models;
 using DataAccess.Repository;
 using DataAccess.Repository.dao;
@@ -60,8 +60,7 @@ namespace SalesWinApp
             
 
         }
-
-        private void btnViewCart_Click(object sender, EventArgs e)
+        private void LoadCartGridView()
         {
             try
             {
@@ -88,14 +87,24 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Add to cart. " + ex.Message);
+                MessageBox.Show("View cart. " + ex.Message);
             }
+        }
+        private void btnViewCart_Click(object sender, EventArgs e)
+        {
+            LoadCartGridView();
 
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            //var confirmResult = MessageBox.Show("Remove this item from cart?", "Confirm remove", MessageBoxButtons.YesNo);
+            //if (confirmResult == DialogResult.Yes)
+            //{
+                var selectedProduct = _product.GetAllProducts().ToList()[dgvCart.CurrentRow.Index];
+                cartObj.RemoveFromCart(selectedProduct.ProductId);
+                LoadCartGridView();
+            //}
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
