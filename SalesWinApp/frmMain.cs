@@ -90,14 +90,16 @@ namespace SalesWinApp
         }
         private void ShowMembers(object sender, EventArgs e)
         {
-            //var childForm = new frmMembers() { };
-            //childForm.MdiParent = this;
-            //childForm.Show();
+            var childForm = new frmMembers() { };
+            childForm.MdiParent = this;
+            childForm.Show();
         }
 
         private void AddMember(object sender, EventArgs e)
         {
-           
+            var childForm = new frmAddMember() { };
+            childForm.MdiParent = this;
+            childForm.Show();
         }
 
         private void ShowOrders(object sender, EventArgs e)
