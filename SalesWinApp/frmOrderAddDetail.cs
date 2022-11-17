@@ -17,6 +17,8 @@ namespace SalesWinApp
     {
         private IProductRepository _product= new ProductRepository();
         private Product selectedProduct = null;
+        private BindingSource _source = new BindingSource();
+        
         public frmOrderAddDetail()
         {
             InitializeComponent();
@@ -24,20 +26,20 @@ namespace SalesWinApp
 
         private void cboProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedProduct = _product.GetAllProducts().ToList()[cboProducts.SelectedIndex];
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
         {
-            selectedProduct = _product.Get(1);
-            var proName = _product.GetAllProducts().Select(x=>x.ProductName).ToArray();
+            IEnumerable<Product> products = _product.GetAllProducts();
+            _source.DataSource = products;
+            selectedProduct = products.First();
+            var proName = products.Select(x=>x.ProductName).ToArray();
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
         }
 
         private void btnAddCart_Click(object sender, EventArgs e)
-        {
-            
+        { 
         }
     }
 }

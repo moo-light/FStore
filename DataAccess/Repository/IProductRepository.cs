@@ -9,7 +9,7 @@ namespace DataAccess.Repository
 {
     public interface IProductRepository
     {
-
+        IEnumerable<Product> AllProduct { get; }
         IEnumerable<Category> GetAllCategory();
         Product Get(int id);
         void Create(Product p);
