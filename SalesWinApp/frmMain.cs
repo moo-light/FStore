@@ -1,4 +1,4 @@
-﻿using BusinessObject.Models;
+using BusinessObject.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,18 +99,6 @@ namespace SalesWinApp
         private void AddMember(object sender, EventArgs e)
         {
            
-        }
-
-        private void ShowProducts(object sender, EventArgs e)
-        {
-            var childForm = new frmProduct() { };
-            childForm.MdiParent = this;
-            childForm.Show();
-        }
-
-        private void AddProduct(object sender, EventArgs e)
-        {
-
         }
 
         private void ShowOrders(object sender, EventArgs e)

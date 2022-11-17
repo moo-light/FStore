@@ -42,35 +42,52 @@ namespace SalesWinApp
             }
             else if (txtStock.Text.IsNullOrEmpty())
             {
-                MessageBox.Show("Units in stock must >= 0", this.Text);
+                MessageBox.Show("Please input price", this.Text);
             }
+            
             else
             {
-                if (UpdateOrAdd)
+                try
                 {
-                    _product.ProductName = txtProductName.Text;
-                    _product.Weight = txtWeight.Text;
-                    _product.UnitPrice = Decimal.Parse(txtPrice.Text);
-                    _product.UnitsInStock = Int32.Parse(txtStock.Text);
-                    _product.CategoryId = GetCategoryIDByName(cboCategory.Text);
-                    _product.Category = GetCategoryByName(cboCategory.Text);
-                    ProductRepository.Update(_product);
-                    this.DialogResult = DialogResult.OK;
+                    if (Decimal.Parse(txtPrice.Text) < 0)
+                    {
+                        throw new Exception("price nust not negative");
+                    }
+                    else if (Int32.Parse(txtStock.Text) < 0)
+                    {
+                        throw new Exception("stock nust not negative");
+                    }
+                    if (UpdateOrAdd)
+                    {
+                        _product.ProductName = txtProductName.Text;
+                        _product.Weight = txtWeight.Text;
+                        _product.UnitPrice = Decimal.Parse(txtPrice.Text);
+                        _product.UnitsInStock = Int32.Parse(txtStock.Text);
+                        _product.CategoryId = GetCategoryIDByName(cboCategory.Text);
+                        _product.Category = GetCategoryByName(cboCategory.Text);
+                        ProductRepository.Update(_product);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        _product = new Product();
+                        _product.ProductName = txtProductName.Text;
+                        _product.Weight = txtWeight.Text;
+                        _product.UnitPrice = Decimal.Parse(txtPrice.Text);
+                        _product.UnitsInStock = Int32.Parse(txtStock.Text);
+                        _product.CategoryId = GetCategoryIDByName(cboCategory.Text);
+                        _product.Category = GetCategoryByName(cboCategory.Text);
+                        ProductRepository.Create(_product);
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    _product = new Product();
-                    _product.ProductName = txtProductName.Text;
-                    _product.Weight = txtWeight.Text;
-                    _product.UnitPrice = Decimal.Parse(txtPrice.Text);
-                    _product.UnitsInStock = Int32.Parse(txtStock.Text);
-                    _product.CategoryId = GetCategoryIDByName(cboCategory.Text);
-                    _product.Category = GetCategoryByName(cboCategory.Text);
-                    ProductRepository.Create(_product);
-                    this.DialogResult = DialogResult.OK;
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
+
         private int GetCategoryIDByName(string name)
         {
             return ProductRepository.GetAllCategory().FirstOrDefault(c => c.CategoryName.Equals(name)).CategoryId;
@@ -106,5 +123,5 @@ namespace SalesWinApp
         }
     }
 
-    
+
 }
