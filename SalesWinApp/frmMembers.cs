@@ -13,15 +13,18 @@ namespace SalesWinApp
 {
     public partial class frmMembers : Form
     {
+
         public IMemberRepository _memberRepository = new MemberRepository();
         //private frmAddMember frmAddMember = new frmAddMember();
         private BindingSource _bindingSrc;
         public frmAddMember _frmAddMember ;
         private frmAdmin frmAdmin;
+
         public frmMembers()
         {
             InitializeComponent();
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -58,23 +61,42 @@ namespace SalesWinApp
 
         }
 
+
         private void frmMembers_Load(object sender, EventArgs e)
         {
-            LoadMemberAccount();
+            LoadMember();
+        }
+        private void LoadMember()
+        {
+            
+            var members = _memberRepository.GetAlls();
+
+            _bindingSrc = new BindingSource();
+
+            _bindingSrc.DataSource = members;
+
+            dgvMember.DataSource = null;
+            dgvMember.DataSource = _bindingSrc;
+
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            var member = _memberRepository.GetAlls().ToArray()[_bindingSrc.Position];
-            _memberRepository.Remove(member);
-            LoadMemberAccount();
-            MessageBox.Show("Deleted");
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
+            frmCreateMemberDetail frmCreateMemberDetail = new frmCreateMemberDetail
+            {
+                UpdateOrAdd = false,
+                MemberRepository = _memberRepository
+            };
+            if (frmCreateMemberDetail.ShowDialog() == DialogResult.OK)
+            {
+                frmCreateMemberDetail.Hide();
+                LoadMember();
+                _bindingSrc.Position = _bindingSrc.Count - 1;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -87,6 +109,11 @@ namespace SalesWinApp
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMembers_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -19,25 +19,7 @@ namespace SalesWinApp
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
+        
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -68,12 +50,10 @@ namespace SalesWinApp
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +82,56 @@ namespace SalesWinApp
             {
                 childForm.Close();
             }
+        }
+
+        private void windowsMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ShowMembers(object sender, EventArgs e)
+        {
+            var childForm = new frmMembers() { };
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void AddMember(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ShowProducts(object sender, EventArgs e)
+        {
+            var childForm = new frmProduct() { };
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void AddProduct(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowOrders(object sender, EventArgs e)
+        {
+            var childForm = new frmOrders() { };
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void AddOrder(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
