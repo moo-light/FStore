@@ -40,16 +40,8 @@
             // 
             // dgvMember
             // 
-            this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMember.Location = new System.Drawing.Point(12, 24);
-            this.dgvMember.Name = "dgvMember";
-            this.dgvMember.RowHeadersWidth = 51;
-            this.dgvMember.RowTemplate.Height = 29;
-            this.dgvMember.Size = new System.Drawing.Size(776, 306);
-            this.dgvMember.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
+
+
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnUpdate);
@@ -62,17 +54,17 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(32, 39);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(94, 29);
-            this.btnCreate.TabIndex = 0;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+
+      
+            // 
+            // btnCancel
+            // 
+   
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(197, 39);
+            this.btnUpdate.Location = new System.Drawing.Point(299, 409);
+
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 1;
@@ -100,12 +92,8 @@
             // 
             // frmMembers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvMember);
-            this.MaximizeBox = false;
+           
+
             this.Name = "frmMembers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member Management";

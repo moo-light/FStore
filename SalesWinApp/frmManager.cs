@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,28 @@ namespace SalesWinApp
     
     public partial class frmManager : Form
     {
-        frmUser frmUser = new frmUser();
-        
+       private  frmUserProfile _frmUser;
+        private Member _member;
+        //private Member user;
+        //private frmMembers frmMembers;
+        public Member User { get => _member; set => _member = value; }
+
         public frmManager()
         {
             InitializeComponent();
         }
+        public frmManager(Member member)
+        {
+        this._member = member;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            _frmUser = new frmUserProfile();
+         _frmUser.User= _member;
             this.Hide();
-            frmUser.Show();
+            _frmUser.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,5 +48,7 @@ namespace SalesWinApp
         {
 
         }
+
+      
     }
 }

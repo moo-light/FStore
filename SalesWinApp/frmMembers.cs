@@ -13,13 +13,54 @@ namespace SalesWinApp
 {
     public partial class frmMembers : Form
     {
-        private readonly IMemberRepository _memberRepo
-            = new MemberRepository();
-        private BindingSource _source;
+
+        public IMemberRepository _memberRepository = new MemberRepository();
+        //private frmAddMember frmAddMember = new frmAddMember();
+        private BindingSource _bindingSrc;
+        public frmAddMember _frmAddMember ;
+        private frmAdmin frmAdmin;
+
         public frmMembers()
         {
             InitializeComponent();
         }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          var context = txtSearchMem.Text;
+            LoadMemberAccount(context); 
+        }
+
+      
+        private void txtSearchMem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void  LoadMemberAccount(string search = null) {
+
+            var members = _memberRepository.GetAlls();
+            if (search != null) {
+                members = members.Where(a => a.Email.ToUpper().Contains(search.ToUpper().Trim()));
+            }
+            _bindingSrc = new BindingSource();
+            _bindingSrc.DataSource = members;
+            dgvMembers.DataSource = null;
+            dgvMembers.DataSource = _bindingSrc;
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
         private void frmMembers_Load(object sender, EventArgs e)
         {
@@ -28,14 +69,14 @@ namespace SalesWinApp
         private void LoadMember()
         {
             
-            var members = _memberRepo.GetAlls();
+            var members = _memberRepository.GetAlls();
 
-            _source = new BindingSource();
+            _bindingSrc = new BindingSource();
 
-            _source.DataSource = members;
+            _bindingSrc.DataSource = members;
 
             dgvMember.DataSource = null;
-            dgvMember.DataSource = _source;
+            dgvMember.DataSource = _bindingSrc;
 
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -48,14 +89,33 @@ namespace SalesWinApp
             frmCreateMemberDetail frmCreateMemberDetail = new frmCreateMemberDetail
             {
                 UpdateOrAdd = false,
-                MemberRepository = _memberRepo
+                MemberRepository = _memberRepository
             };
             if (frmCreateMemberDetail.ShowDialog() == DialogResult.OK)
             {
                 frmCreateMemberDetail.Hide();
                 LoadMember();
-                _source.Position = _source.Count - 1;
+                _bindingSrc.Position = _bindingSrc.Count - 1;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _frmAddMember = new frmAddMember();
+            this.Close();
+            _frmAddMember.Show();
+            
+            
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMembers_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -60,7 +60,7 @@
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnProfile);
             this.Name = "frmManager";
-            this.Text = "Form1";
+            this.Text = "cuuem";
             this.Load += new System.EventHandler(this.frmManager_Load);
             this.ResumeLayout(false);
 

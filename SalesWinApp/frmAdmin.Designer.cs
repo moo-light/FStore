@@ -36,8 +36,10 @@
             // 
             // btnMember
             // 
+
             this.btnMember.Location = new System.Drawing.Point(22, 161);
             this.btnMember.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+
             this.btnMember.Name = "btnMember";
             this.btnMember.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnMember.Size = new System.Drawing.Size(169, 60);
@@ -48,8 +50,10 @@
             // 
             // btnProduct
             // 
+
             this.btnProduct.Location = new System.Drawing.Point(270, 161);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnProduct.Size = new System.Drawing.Size(169, 60);
@@ -60,8 +64,10 @@
             // 
             // btnOrder
             // 
+
             this.btnOrder.Location = new System.Drawing.Point(22, 246);
             this.btnOrder.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnOrder.Size = new System.Drawing.Size(169, 60);
@@ -71,8 +77,10 @@
             // 
             // btnReport
             // 
+
             this.btnReport.Location = new System.Drawing.Point(270, 246);
             this.btnReport.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnReport.Size = new System.Drawing.Size(169, 60);
@@ -86,7 +94,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+
             this.ClientSize = new System.Drawing.Size(461, 332);
+
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnProduct);

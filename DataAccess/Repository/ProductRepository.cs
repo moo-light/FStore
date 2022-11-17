@@ -32,7 +32,7 @@ namespace DataAccess.Repository
 
         public IEnumerable<Product> GetAllProduct()
         {
-            return this._db.Products.Include("Category").ToList();
+            return this._db.Products.Where(x => !x.Deleted).Include("Category").ToList();
         }
 
         public IEnumerable<Category> GetAllCategory()
@@ -41,11 +41,12 @@ namespace DataAccess.Repository
         }
 
 
-        public void Remove(Product p)
+        public void Delete(Product p)
         {
             if (p is not null)
             {
-                _db.Remove(p);
+                p.Deleted = true;
+                _db.Update(p);
                 _db.SaveChanges();
             }
         }
