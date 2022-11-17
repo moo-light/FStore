@@ -36,5 +36,11 @@ namespace SalesWinApp
         {
 
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmReport reportForm = new frmReport();
+            reportForm.ShowDialog();
+        }
     }
 }
