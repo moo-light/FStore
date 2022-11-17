@@ -14,7 +14,7 @@ namespace SalesWinApp
 {
     public partial class frmOrders : Form
     {
-        string connectionString = @"Data Sourc=(local); Initial Catalog = FStoreDB; Integrated Security=True";
+        string path = @"Data Sourc=(local); Initial Catalog = dbo.OrderDetail; Integrated Security=True";
         public frmOrders()
         {
             InitializeComponent();
@@ -22,12 +22,16 @@ namespace SalesWinApp
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            using (SqlConnection sqlConnect = new SqlConnection(path))
             {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM OrderDetial", sqlCon);
-                DataTable dtbl = new DataTable();
-                sqlDa.Fill(dtbl);
+                sqlConnect.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM OrderDetial", sqlConnect);
+                DataTable dt = new DataTable();
+                sqlData.Fill(dt);
+
+                DataView dv = new DataView();
+                
+                
             }
         }
     }
