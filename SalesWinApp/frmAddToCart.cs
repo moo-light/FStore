@@ -57,8 +57,7 @@ namespace SalesWinApp
 
 
         }
-
-        private void btnViewCart_Click(object sender, EventArgs e)
+        private void LoadCartGridView()
         {
             try
             {
@@ -69,7 +68,8 @@ namespace SalesWinApp
                     productList.Add(product);
                 }
                 var dataList = from pd in productList
-                               select new { 
+                               select new
+                               {
                                    ProductID = pd.ProductId,
                                    ProductName = pd.ProductName,
                                    UnitPrice = pd.UnitPrice,
@@ -81,16 +81,27 @@ namespace SalesWinApp
                 source.DataSource = null;
                 source.DataSource = dataList.ToList();
                 dgvCart.DataSource = source;
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Add to cart. " + ex.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("View cart. " + ex.Message);
+            }
+        }
+        private void btnViewCart_Click(object sender, EventArgs e)
+        {
+            LoadCartGridView();
 
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            //var confirmResult = MessageBox.Show("Remove this item from cart?", "Confirm remove", MessageBoxButtons.YesNo);
+            //if (confirmResult == DialogResult.Yes)
+            //{
+                var selectedProduct = _product.GetAllProducts().ToList()[dgvCart.CurrentRow.Index];
+                cartObj.RemoveFromCart(selectedProduct.ProductId);
+                LoadCartGridView();
+            //}
         }
     }
 }
