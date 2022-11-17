@@ -32,32 +32,34 @@
             this.lbEndDate = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbStartDate
             // 
             this.lbStartDate.AutoSize = true;
-            this.lbStartDate.Location = new System.Drawing.Point(38, 116);
+            this.lbStartDate.Location = new System.Drawing.Point(67, 48);
             this.lbStartDate.Name = "lbStartDate";
-            this.lbStartDate.Size = new System.Drawing.Size(76, 20);
+            this.lbStartDate.Size = new System.Drawing.Size(71, 19);
             this.lbStartDate.TabIndex = 0;
             this.lbStartDate.Text = "Start Date";
             // 
             // lbEndDate
             // 
             this.lbEndDate.AutoSize = true;
-            this.lbEndDate.Location = new System.Drawing.Point(285, 116);
+            this.lbEndDate.Location = new System.Drawing.Point(344, 48);
             this.lbEndDate.Name = "lbEndDate";
-            this.lbEndDate.Size = new System.Drawing.Size(70, 20);
+            this.lbEndDate.Size = new System.Drawing.Size(65, 19);
             this.lbEndDate.TabIndex = 1;
             this.lbEndDate.Text = "End Date";
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(669, 116);
+            this.btnExport.Location = new System.Drawing.Point(688, 43);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(94, 29);
+            this.btnExport.Size = new System.Drawing.Size(94, 28);
             this.btnExport.TabIndex = 2;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -65,18 +67,34 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 199);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 92);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(890, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(812, 218);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Location = new System.Drawing.Point(144, 44);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(174, 26);
+            this.dtpStartDate.TabIndex = 4;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Location = new System.Drawing.Point(429, 44);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(174, 26);
+            this.dtpEndDate.TabIndex = 5;
             // 
             // frmReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(890, 385);
+            this.Controls.Add(this.dtpEndDate);
+            this.Controls.Add(this.dtpStartDate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.lbEndDate);
@@ -96,5 +114,7 @@
         private Label lbEndDate;
         private Button btnExport;
         private DataGridView dataGridView1;
+        private DateTimePicker dtpStartDate;
+        private DateTimePicker dtpEndDate;
     }
 }
