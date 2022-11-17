@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class frmOrderAddDetail : Form
+    public partial class frmAddToCart : Form
     {
         private IProductRepository _product= new ProductRepository();
         private Product selectedProduct = null;
         private BindingSource _source = new BindingSource();
         
-        public frmOrderAddDetail()
+        public frmAddToCart()
         {
             InitializeComponent();
         }

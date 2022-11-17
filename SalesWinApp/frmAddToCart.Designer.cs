@@ -1,6 +1,6 @@
 ﻿namespace SalesWinApp
 {
-    partial class frmOrderAddDetail
+    partial class frmAddToCart
     {
         /// <summary>
         /// Required designer variable.
@@ -104,7 +104,7 @@
             // lbStock
             // 
             this.lbStock.AutoSize = true;
-            this.lbStock.Location = new System.Drawing.Point(544, 74);
+            this.lbStock.Location = new System.Drawing.Point(494, 74);
             this.lbStock.Name = "lbStock";
             this.lbStock.Size = new System.Drawing.Size(39, 15);
             this.lbStock.TabIndex = 5;
@@ -128,7 +128,7 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Price:";
             // 
-            // frmOrderAddDetail
+            // frmAddToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,8 +143,8 @@
             this.Controls.Add(this.btnViewCart);
             this.Controls.Add(this.btnAddCart);
             this.Controls.Add(this.cboProducts);
-            this.Name = "frmOrderAddDetail";
-            this.Text = "frmOrderAddDetail";
+            this.Name = "frmAddToCart";
+            this.Text = "frmAddToCart";
             this.Load += new System.EventHandler(this.frmOrderAddDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
