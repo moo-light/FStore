@@ -31,7 +31,7 @@
             System.Windows.Forms.Label lbStock;
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnViewCart = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCart = new System.Windows.Forms.DataGridView();
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.cboProducts = new System.Windows.Forms.ComboBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -40,14 +40,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             lbStock = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lbStock
+            // 
+            lbStock.AutoSize = true;
+            lbStock.Location = new System.Drawing.Point(622, 94);
+            lbStock.Name = "lbStock";
+            lbStock.Size = new System.Drawing.Size(45, 19);
+            lbStock.TabIndex = 8;
+            lbStock.Text = "Stock:";
             // 
             // btnAddCart
             // 
-            this.btnAddCart.Location = new System.Drawing.Point(295, 12);
+            this.btnAddCart.Location = new System.Drawing.Point(337, 15);
+            this.btnAddCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(120, 23);
+            this.btnAddCart.Size = new System.Drawing.Size(137, 29);
             this.btnAddCart.TabIndex = 1;
             this.btnAddCart.Text = "Add to Cart";
             this.btnAddCart.UseVisualStyleBackColor = true;
@@ -55,27 +65,31 @@
             // 
             // btnViewCart
             // 
-            this.btnViewCart.Location = new System.Drawing.Point(34, 58);
+            this.btnViewCart.Location = new System.Drawing.Point(39, 73);
+            this.btnViewCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewCart.Name = "btnViewCart";
-            this.btnViewCart.Size = new System.Drawing.Size(75, 31);
+            this.btnViewCart.Size = new System.Drawing.Size(86, 39);
             this.btnViewCart.TabIndex = 2;
             this.btnViewCart.Text = "View Cart";
             this.btnViewCart.UseVisualStyleBackColor = true;
+            this.btnViewCart.Click += new System.EventHandler(this.btnViewCart_Click);
             // 
-            // dataGridView1
+            // dgvCart
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(687, 234);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCart.Location = new System.Drawing.Point(39, 158);
+            this.dgvCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvCart.Name = "dgvCart";
+            this.dgvCart.RowTemplate.Height = 25;
+            this.dgvCart.Size = new System.Drawing.Size(785, 296);
+            this.dgvCart.TabIndex = 3;
             // 
             // btnCreateOrder
             // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(227, 58);
+            this.btnCreateOrder.Location = new System.Drawing.Point(259, 73);
+            this.btnCreateOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(104, 31);
+            this.btnCreateOrder.Size = new System.Drawing.Size(119, 39);
             this.btnCreateOrder.TabIndex = 2;
             this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
@@ -83,82 +97,77 @@
             // cboProducts
             // 
             this.cboProducts.FormattingEnabled = true;
-            this.cboProducts.Location = new System.Drawing.Point(34, 12);
+            this.cboProducts.Location = new System.Drawing.Point(39, 15);
+            this.cboProducts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboProducts.Name = "cboProducts";
-            this.cboProducts.Size = new System.Drawing.Size(255, 23);
+            this.cboProducts.Size = new System.Drawing.Size(291, 27);
             this.cboProducts.TabIndex = 0;
             this.cboProducts.SelectedIndexChanged += new System.EventHandler(this.cboProducts_SelectedIndexChanged);
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(544, 14);
+            this.txtProductName.Location = new System.Drawing.Point(622, 18);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(177, 23);
+            this.txtProductName.Size = new System.Drawing.Size(202, 26);
             this.txtProductName.TabIndex = 4;
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.Location = new System.Drawing.Point(544, 43);
+            this.txtProductPrice.Location = new System.Drawing.Point(622, 54);
+            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(177, 23);
+            this.txtProductPrice.Size = new System.Drawing.Size(202, 26);
             this.txtProductPrice.TabIndex = 4;
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(494, 74);
+            this.label.Location = new System.Drawing.Point(565, 94);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(39, 15);
+            this.label.Size = new System.Drawing.Size(45, 19);
             this.label.TabIndex = 5;
             this.label.Text = "Stock:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(491, 18);
+            this.label1.Location = new System.Drawing.Point(561, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.Size = new System.Drawing.Size(48, 19);
             this.label1.TabIndex = 6;
             this.label1.Text = "Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(497, 47);
+            this.label2.Location = new System.Drawing.Point(568, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.Size = new System.Drawing.Size(41, 19);
             this.label2.TabIndex = 7;
             this.label2.Text = "Price:";
             // 
-            // lbStock
-            // 
-            lbStock.AutoSize = true;
-            lbStock.Location = new System.Drawing.Point(544, 74);
-            lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(39, 15);
-            lbStock.TabIndex = 8;
-            lbStock.Text = "Stock:";
-            // 
             // frmAddToCart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 381);
+            this.ClientSize = new System.Drawing.Size(889, 483);
             this.Controls.Add(lbStock);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label);
             this.Controls.Add(this.txtProductPrice);
             this.Controls.Add(this.txtProductName);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCart);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.btnViewCart);
             this.Controls.Add(this.btnAddCart);
             this.Controls.Add(this.cboProducts);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAddToCart";
             this.Text = "frmAddToCart";
             this.Load += new System.EventHandler(this.frmOrderAddDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +176,7 @@
         #endregion
         private Button btnAddCart;
         private Button btnViewCart;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCart;
         private Button btnCreateOrder;
         private ComboBox cboProducts;
         private TextBox txtProductName;

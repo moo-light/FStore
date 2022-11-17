@@ -1,4 +1,5 @@
-﻿using BusinessObject.Models;
+﻿using BusinessObject.CartObject;
+using BusinessObject.Models;
 using DataAccess.Repository;
 using DataAccess.Repository.dao;
 using System;
@@ -16,6 +17,7 @@ namespace SalesWinApp
     public partial class frmAddToCart : Form
     {
         private IProductRepository _product= new ProductRepository();
+        private CartObject cartObj = new CartObject();
         private Product selectedProduct = null;
         private BindingSource _source = new BindingSource();
         
@@ -40,6 +42,37 @@ namespace SalesWinApp
 
         private void btnAddCart_Click(object sender, EventArgs e)
         { 
+        }
+
+        private void btnViewCart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cartObj.Cart.Add(2, 1);
+                cartObj.Cart.Add(5, 3);
+                cartObj.Cart.Add(3, 4);
+                var productList = new List<Product>();
+                foreach (int key in cartObj.Cart.Keys)
+                {
+                    var product = this._product.Get(key);
+                    productList.Add(product);
+                }
+                var dataList = from pd in productList
+                               select new { 
+                                   ProductID = pd.ProductId,
+                                   ProductName = pd.ProductName,
+                                   UnitPrice = pd.UnitPrice,
+                                   UnitInStock = pd.UnitsInStock
+                               };
+                BindingSource source = new BindingSource();
+                source.DataSource = null;
+                source.DataSource = dataList.ToList();
+                dgvCart.DataSource = source;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Add to cart. " + ex.Message);
+            }
+
         }
     }
 }
