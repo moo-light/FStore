@@ -27,13 +27,10 @@ namespace DataAccess.Repository
 
         public Product Get(int id)
         {
-            return this.GetAllProduct().SingleOrDefault(x => x.ProductId == id);
+            return this.AllProduct.SingleOrDefault(x => x.ProductId == id);
         }
 
-        public IEnumerable<Product> GetAllProduct()
-        {
-            return this._db.Products.Where(x => !x.Deleted).Include("Category").ToList();
-        }
+        public IEnumerable<Product> AllProduct => this._db.Products.Where(x => !x.Deleted).Include("Category").ToList();
 
         public IEnumerable<Category> GetAllCategory()
         {
@@ -58,6 +55,11 @@ namespace DataAccess.Repository
                 _db.Update(p);
                 _db.SaveChanges();
             }
+        }
+
+        public IEnumerable<Product> GetAllProducts()
+        {
+            return AllProduct;
         }
     }
 }
