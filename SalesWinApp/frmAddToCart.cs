@@ -18,7 +18,7 @@ namespace SalesWinApp
     {
 
         IEnumerable<Product> _products = ProductDAO.GetAlls();
-
+        IProductRepository _product = new ProductRepository();
         private Product selectedProduct = null;
         private CartObject cartObj = new();
         private BindingSource _source = new BindingSource();
