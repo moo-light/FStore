@@ -80,7 +80,8 @@ namespace SalesWinApp
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            txtEmail.Text = "admin@fstore.com";
+            txtPassword.Text = "admin@@";
         }
     }
 }
