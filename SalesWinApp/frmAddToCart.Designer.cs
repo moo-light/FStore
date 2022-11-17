@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label lbStock;
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnViewCart = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -35,9 +36,10 @@
             this.cboProducts = new System.Windows.Forms.ComboBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
-            this.lbStock = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            lbStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,14 +103,14 @@
             this.txtProductPrice.Size = new System.Drawing.Size(177, 23);
             this.txtProductPrice.TabIndex = 4;
             // 
-            // lbStock
+            // label
             // 
-            this.lbStock.AutoSize = true;
-            this.lbStock.Location = new System.Drawing.Point(494, 74);
-            this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(39, 15);
-            this.lbStock.TabIndex = 5;
-            this.lbStock.Text = "Stock:";
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(494, 74);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(39, 15);
+            this.label.TabIndex = 5;
+            this.label.Text = "Stock:";
             // 
             // label1
             // 
@@ -128,14 +130,24 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Price:";
             // 
+            // lbStock
+            // 
+            lbStock.AutoSize = true;
+            lbStock.Location = new System.Drawing.Point(544, 74);
+            lbStock.Name = "lbStock";
+            lbStock.Size = new System.Drawing.Size(39, 15);
+            lbStock.TabIndex = 8;
+            lbStock.Text = "Stock:";
+            // 
             // frmAddToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 381);
+            this.Controls.Add(lbStock);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbStock);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.txtProductPrice);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.dataGridView1);
@@ -160,7 +172,7 @@
         private ComboBox cboProducts;
         private TextBox txtProductName;
         private TextBox txtProductPrice;
-        private Label lbStock;
+        private Label label;
         private Label label1;
         private Label label2;
     }
