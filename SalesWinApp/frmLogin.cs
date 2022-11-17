@@ -66,7 +66,7 @@ namespace SalesWinApp
             //}
             frmMain frmMain = new frmMain()
             {
-                
+                User = user
             };
             this.Hide();
             frmMain.ShowDialog();

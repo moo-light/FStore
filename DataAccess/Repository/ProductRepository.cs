@@ -41,7 +41,7 @@ namespace DataAccess.Repository
         }
 
 
-        public void Delete(Product p)
+        public void Remove(Product p)
         {
             if (p is not null)
             {

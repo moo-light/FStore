@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace SalesWinApp
     public partial class frmMain : Form
     {
         private int childFormNumber = 0;
+
+        public Member User { get; internal set; }
 
         public frmMain()
         {
@@ -34,14 +37,6 @@ namespace SalesWinApp
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
         }
 
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,9 +123,36 @@ namespace SalesWinApp
         {
 
         }
-
+        private void btnViewReport_Click(object sender, EventArgs e)
+        {
+            var childForm = new frmReport() { };
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
         private void frmMain_Load(object sender, EventArgs e)
         {
+            if (this.User.Role.Equals("admin"))
+            {
+                mnuManager.Hide();
+            }
+            else if( this.User.Role.Equals("member"))
+            {
+                mnuAdmin.Hide();
+
+            }
+        }
+
+        private void UpdateProfile(object sender, EventArgs e)
+        {
+            frmUserProfile frmUserProfile = new frmUserProfile()
+            {
+                User = User
+                
+            };
+            if (frmUserProfile.ShowDialog() == DialogResult.OK)
+            {
+                //change something
+            }
 
         }
     }

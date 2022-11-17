@@ -132,12 +132,32 @@ namespace SalesWinApp
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            frmAddProduct frmAddProduct = new frmAddProduct()
+            {
+                UpdateOrAdd = false,
+                ProductRepository = _repository,
+            };
+            if (frmAddProduct.ShowDialog() == DialogResult.OK)
+            {
+                frmAddProduct.Hide();
+                LoadProduct();
+                _source.Position = _source.Count - 1;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            frmAddProduct frmAddProduct = new frmAddProduct()
+            {
+                UpdateOrAdd = true,
+                ProductRepository = _repository,
+                Product = _repository.GetAllProduct().ToList()[dgvProduct.CurrentRow.Index]
+            };
+            if (frmAddProduct.ShowDialog() == DialogResult.OK)
+            {
+                frmAddProduct.Hide();
+                LoadProduct();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -146,7 +166,7 @@ namespace SalesWinApp
             if (confirmResult == DialogResult.Yes)
             {
                 var account = _repository.GetAllProduct().ToList()[dgvProduct.CurrentRow.Index];
-                _repository.Delete(account);
+                _repository.Remove(account);
                 LoadProduct();
             }
         }
