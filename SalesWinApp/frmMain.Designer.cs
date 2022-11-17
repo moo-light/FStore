@@ -36,7 +36,6 @@
             this.tsmProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.btnViewOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNewOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnViewReport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,6 +136,7 @@
             this.tsmOrder.Name = "tsmOrder";
             this.tsmOrder.Size = new System.Drawing.Size(81, 24);
             this.tsmOrder.Text = "&Order";
+            this.tsmOrder.Click += new System.EventHandler(this.tsmOrder_Click);
             // 
             // btnViewOrder
             // 
@@ -324,7 +324,6 @@
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(217, 26);
             this.toolStripMenuItem8.Text = "View Order History";
-            this.toolStripMenuItem8.Click += new System.EventHandler(this.ShowOrders);
             // 
             // toolStripMenuItem12
             // 
@@ -444,7 +443,6 @@
         private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private ToolStripMenuItem btnViewOrder;
-        private ToolStripMenuItem btnNewOrder;
 
         private ToolStripMenuItem salesReportToolStripMenuItem;
         private ToolStripMenuItem viewReportToolStripMenuItem;
