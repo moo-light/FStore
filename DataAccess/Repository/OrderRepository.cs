@@ -11,7 +11,7 @@ namespace DataAccess.Repository
     {
         private FstoreDbContext _db;
 
-        public OrderRepository(FstoreDbContext db)
+        public OrderRepository()
         {
             _db = new FstoreDbContext();
         }

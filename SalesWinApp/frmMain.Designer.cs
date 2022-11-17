@@ -66,6 +66,7 @@
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewOrderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdmin.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.mnuManager.SuspendLayout();
@@ -147,7 +148,8 @@
             // 
             this.tsmOrder.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnViewOrder,
-            this.btnNewOrder});
+            this.btnNewOrder,
+            this.viewOrderHistoryToolStripMenuItem});
             this.tsmOrder.Image = global::SalesWinApp.Properties.Resources.icons8_purchase_order_50;
             this.tsmOrder.Name = "tsmOrder";
             this.tsmOrder.Size = new System.Drawing.Size(81, 24);
@@ -156,14 +158,14 @@
             // btnViewOrder
             // 
             this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(217, 26);
-            this.btnViewOrder.Text = "View Order History";
+            this.btnViewOrder.Size = new System.Drawing.Size(224, 26);
+            this.btnViewOrder.Text = "View Order Detail";
             this.btnViewOrder.Click += new System.EventHandler(this.ShowOrders);
             // 
             // btnNewOrder
             // 
             this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.Size = new System.Drawing.Size(217, 26);
+            this.btnNewOrder.Size = new System.Drawing.Size(224, 26);
             this.btnNewOrder.Text = "New Order";
             this.btnNewOrder.Click += new System.EventHandler(this.AddOrder);
             // 
@@ -382,6 +384,13 @@
             this.toolStripMenuItem20.Text = "&Arrange Icons";
             this.toolStripMenuItem20.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
+            // viewOrderHistoryToolStripMenuItem
+            // 
+            this.viewOrderHistoryToolStripMenuItem.Name = "viewOrderHistoryToolStripMenuItem";
+            this.viewOrderHistoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewOrderHistoryToolStripMenuItem.Text = "View Order History";
+            this.viewOrderHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewOrderHistoryToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -392,7 +401,7 @@
             this.Controls.Add(this.mnuAdmin);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuAdmin;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
@@ -448,6 +457,7 @@
         private ToolStripMenuItem toolStripMenuItem19;
         private ToolStripMenuItem toolStripMenuItem20;
         private ToolStripMenuItem toolStripMenuItem8;
+        private ToolStripMenuItem viewOrderHistoryToolStripMenuItem;
     }
 }
 

@@ -15,6 +15,7 @@ namespace SalesWinApp
     {
         private int childFormNumber = 0;
 
+        private frmOrderHistory _order;
         public Member User { get; internal set; }
 
         public frmMain()
@@ -154,6 +155,13 @@ namespace SalesWinApp
                 //change something
             }
 
+        }
+
+        private void viewOrderHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var childForm = new frmOrderHistory() { };
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }
