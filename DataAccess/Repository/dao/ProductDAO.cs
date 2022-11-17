@@ -14,5 +14,13 @@ namespace DataAccess.Repository.dao
         {
             return _product.GetAllProducts();
         }
+
+
+        internal static void UpdateQuantity(int productID, int quantity, IProductRepository _product)
+        {
+            var product = _product.Get(productID);
+            product.UnitsInStock -= quantity;
+            _product.Update(product);
+        }
     }
 }

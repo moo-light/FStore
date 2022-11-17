@@ -109,9 +109,15 @@ namespace SalesWinApp
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-                foreach (int productID in cartObj.Cart.Keys)
+            if (OrderDAO.CreateOrder(cartObj.Cart, User) == true)
             {
-
+                MessageBox.Show("Create Order Successful!");
+                cartObj = new CartObject();
+                LoadCartGridView();
+            }
+            else
+            {
+                MessageBox.Show("Create Order Failed!"); 
             }
         }
     }
