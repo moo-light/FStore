@@ -58,7 +58,7 @@
             this.btnProduct.TabIndex = 1;
             this.btnProduct.Text = "Product Management";
             this.btnProduct.UseVisualStyleBackColor = true;
-            this.btnProduct.Click += new System.EventHandler(this.button2_Click);
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnOrder
             // 
@@ -102,7 +102,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAdmin";
             this.Text = "Admin Management";
-            this.Load += new System.EventHandler(this.frmAdmin_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdmin_FormClosed);
             this.ResumeLayout(false);
 
         }
