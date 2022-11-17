@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label lbStock;
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnViewCart = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -135,9 +134,9 @@
             lbStock.AutoSize = true;
             lbStock.Location = new System.Drawing.Point(544, 74);
             lbStock.Name = "lbStock";
-            lbStock.Size = new System.Drawing.Size(39, 15);
-            lbStock.TabIndex = 8;
-            lbStock.Text = "Stock:";
+            lbStock.Size = new System.Drawing.Size(13, 15);
+            lbStock.TabIndex = 9;
+            lbStock.Text = "0";
             // 
             // frmAddToCart
             // 
@@ -175,5 +174,6 @@
         private Label label;
         private Label label1;
         private Label label2;
+        private Label lbStock;
     }
 }
