@@ -145,11 +145,19 @@ namespace SalesWinApp
 
         }
 
+
+        private void viewReport_Click(object sender, EventArgs e)
+        {
+            frmReport reportForm = new frmReport();
+            reportForm.MdiParent = this;
+            reportForm.Show();
+
         private void viewOrderHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var childForm = new frmOrderHistory() { };
             childForm.MdiParent = this;
             childForm.Show();
+
         }
     }
 }

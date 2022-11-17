@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -15,5 +16,8 @@ namespace DataAccess.Repository
         void Create(Order o);
         void Update(Order o);
         void Remove(Order o);
+
+        public DbSet<Order> GetOrders();
+        public decimal? GetTotalBill(int orderID);
     }
 }
