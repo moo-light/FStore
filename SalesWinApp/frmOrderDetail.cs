@@ -14,9 +14,9 @@ namespace SalesWinApp
     public partial class frmOrderDetail : Form
     {
         public int orderID_detail { get; set; }
-        public IOrderRepository _order = new OrderRepository();
+        
         private BindingSource _source = new();
-        public int OrderIdDetail { get; set; }
+        private IOrderDetailRepository _orderDetail = new OrderDetailRepository();
         public frmOrderDetail()
         {
             InitializeComponent();
@@ -24,12 +24,23 @@ namespace SalesWinApp
 
         private void frmOrderDetail_Load(object sender, EventArgs e)
         {
-
+            LoadOrderDetail();
         }
 
-private void  LoadOrderDetail(String orderID1 = null)
+private void  LoadOrderDetail()
         {
-           
+         
+            var orderDetail = _orderDetail.GetAlls().Where(a => a.OrderId == orderID_detail);
+        _source.DataSource = orderDetail;
+            dgvOrderDetail.DataSource = null;
+            dgvOrderDetail.DataSource= _source;
+            
+        
+        }
+
+        private void dgvOrderDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
