@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label lbStock;
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnViewCart = new System.Windows.Forms.Button();
             this.dgvCart = new System.Windows.Forms.DataGridView();
@@ -38,7 +39,8 @@
             this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbStock = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
+            lbStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +148,17 @@
             lbStock.TabIndex = 9;
             lbStock.Text = "0";
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(39, 431);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(154, 39);
+            this.btnRemove.TabIndex = 2;
+            this.btnRemove.Text = "Remove From Cart";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // frmAddToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -159,6 +172,7 @@
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.dgvCart);
             this.Controls.Add(this.btnCreateOrder);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnViewCart);
             this.Controls.Add(this.btnAddCart);
             this.Controls.Add(this.cboProducts);
@@ -184,5 +198,6 @@
         private Label label1;
         private Label label2;
         private Label lbStock;
+        private Button btnRemove;
     }
 }
