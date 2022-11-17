@@ -151,6 +151,7 @@ namespace SalesWinApp
             frmReport reportForm = new frmReport();
             reportForm.MdiParent = this;
             reportForm.Show();
+        }
 
         private void viewOrderHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
