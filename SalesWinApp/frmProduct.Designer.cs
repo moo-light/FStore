@@ -128,6 +128,7 @@
             // 
             // cboSearchBy
             // 
+            this.cboSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSearchBy.FormattingEnabled = true;
             this.cboSearchBy.Items.AddRange(new object[] {
             "ID",
@@ -136,7 +137,6 @@
             this.cboSearchBy.Name = "cboSearchBy";
             this.cboSearchBy.Size = new System.Drawing.Size(125, 28);
             this.cboSearchBy.TabIndex = 7;
-            this.cboSearchBy.Text = "ProductName";
             // 
             // txtMinPrice
             // 
@@ -229,6 +229,7 @@
             this.Controls.Add(this.btnClose);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Management";
             this.Load += new System.EventHandler(this.frmProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
