@@ -31,7 +31,8 @@ namespace SalesWinApp
         private void LoadProduct()
         {
             var products = _repository.AllProduct.Select(
-                p => new {
+                p => new
+                {
                     ProductId = p.ProductId,
                     ProductName = p.ProductName,
                     Weight = p.Weight,
@@ -49,7 +50,8 @@ namespace SalesWinApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var products = _repository.AllProduct.Select(
-                p => new {
+                p => new
+                {
                     ProductId = p.ProductId,
                     ProductName = p.ProductName,
                     Weight = p.Weight,
@@ -132,32 +134,41 @@ namespace SalesWinApp
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            frmAddProduct frmAddProduct = new frmAddProduct()
+            var confirmResult = MessageBox.Show("Are you want to create new item?", "Confirm create", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
             {
-                UpdateOrAdd = false,
-                ProductRepository = _repository,
-            };
-            if (frmAddProduct.ShowDialog() == DialogResult.OK)
-            {
-                frmAddProduct.Hide();
-                LoadProduct();
-                _source.Position = _source.Count - 1;
+                frmAddProduct frmAddProduct = new frmAddProduct()
+                {
+                    UpdateOrAdd = false,
+                    ProductRepository = _repository,
+                };
+                if (frmAddProduct.ShowDialog() == DialogResult.OK)
+                {
+                    frmAddProduct.Hide();
+                    LoadProduct();
+                    _source.Position = _source.Count - 1;
+                }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmAddProduct frmAddProduct = new frmAddProduct()
+            var confirmResult = MessageBox.Show("Are you want to update this item?", "Confirm update", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
             {
-                UpdateOrAdd = true,
-                ProductRepository = _repository,
-                Product = _repository.AllProduct.ToList()[dgvProduct.CurrentRow.Index]
-            };
-            if (frmAddProduct.ShowDialog() == DialogResult.OK)
-            {
-                frmAddProduct.Hide();
-                LoadProduct();
+                frmAddProduct frmAddProduct = new frmAddProduct()
+                {
+                    UpdateOrAdd = true,
+                    ProductRepository = _repository,
+                    Product = _repository.Get(Int32.Parse(dgvProduct.CurrentRow.Cells[0].Value.ToString())),
+                };
+                if (frmAddProduct.ShowDialog() == DialogResult.OK)
+                {
+                    frmAddProduct.Hide();
+                    LoadProduct();
+                }
             }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -165,7 +176,7 @@ namespace SalesWinApp
             var confirmResult = MessageBox.Show("Are you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
-                var account = _repository.AllProduct.ToList()[dgvProduct.CurrentRow.Index];
+                var account = _repository.Get(Int32.Parse(dgvProduct.CurrentRow.Cells[0].Value.ToString()));
                 _repository.Remove(account);
                 LoadProduct();
             }
