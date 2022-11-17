@@ -134,7 +134,7 @@ namespace SalesWinApp
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you want to create new item?", "Confirm create", MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Do you want to create new item?", "Confirm create", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
                 frmAddProduct frmAddProduct = new frmAddProduct()
@@ -153,7 +153,7 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you want to update this item?", "Confirm update", MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Do you want to update this item?", "Confirm update", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
                 frmAddProduct frmAddProduct = new frmAddProduct()
@@ -173,7 +173,7 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Do you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
                 var account = _repository.Get(Int32.Parse(dgvProduct.CurrentRow.Cells[0].Value.ToString()));

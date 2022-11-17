@@ -46,37 +46,45 @@ namespace SalesWinApp
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            frmAddMember frmAddMember = new frmAddMember()
+            var confirmResult = MessageBox.Show("Do you want to add new member?", "Confirm create", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
             {
-                UpdateOrAdd = false,
-                memberRepository = _repository,
-            };
-            if (frmAddMember.ShowDialog() == DialogResult.OK)
-            {
-                frmAddMember.Hide();
-                LoadMember();
-                _source.Position = _source.Count - 1;
+                frmAddMember frmAddMember = new frmAddMember()
+                {
+                    UpdateOrAdd = false,
+                    memberRepository = _repository,
+                };
+                if (frmAddMember.ShowDialog() == DialogResult.OK)
+                {
+                    frmAddMember.Hide();
+                    LoadMember();
+                    _source.Position = _source.Count - 1;
+                }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmAddMember frmAddMember = new frmAddMember()
+            var confirmResult = MessageBox.Show("Do you want to update this member?", "Confirm update", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
             {
-                UpdateOrAdd = true,
-                memberRepository = _repository,
-                Member = _repository.GetAlls().ToList()[dgvMember.CurrentRow.Index]
-            };
-            if (frmAddMember.ShowDialog() == DialogResult.OK)
-            {
-                frmAddMember.Hide();
-                LoadMember();
+                frmAddMember frmAddMember = new frmAddMember()
+                {
+                    UpdateOrAdd = true,
+                    memberRepository = _repository,
+                    Member = _repository.GetAlls().ToList()[dgvMember.CurrentRow.Index]
+                };
+                if (frmAddMember.ShowDialog() == DialogResult.OK)
+                {
+                    frmAddMember.Hide();
+                    LoadMember();
+                }
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo);
+            var confirmResult = MessageBox.Show("Do you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
                 var account = _repository.GetAlls().ToList()[dgvMember.CurrentRow.Index];
