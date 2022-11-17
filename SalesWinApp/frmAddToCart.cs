@@ -46,9 +46,15 @@ namespace SalesWinApp
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
+            if (selectedProduct.UnitsInStock <= 0)
+            {
+                MessageBox.Show("OUT OF STOCK!");
+                return;
+            }
             cartObj.AddToCart(selectedProduct.ProductId);
             selectedProduct.UnitsInStock -= 1;
             lbStock.Text = selectedProduct.UnitsInStock.ToString();
+
 
         }
 
