@@ -54,6 +54,7 @@ namespace SalesWinApp
         {
             try
             {
+                cartObj.Cart = new Dictionary<int, int>();
                 cartObj.Cart.Add(2, 1);
                 cartObj.Cart.Add(5, 3);
                 cartObj.Cart.Add(3, 4);
@@ -68,7 +69,9 @@ namespace SalesWinApp
                                    ProductID = pd.ProductId,
                                    ProductName = pd.ProductName,
                                    UnitPrice = pd.UnitPrice,
-                                   UnitInStock = pd.UnitsInStock
+                                   Quantity = cartObj.Cart[pd.ProductId],
+                                   InStock = pd.UnitsInStock,
+                                   Price = pd.UnitPrice * cartObj.Cart[pd.ProductId]
                                };
                 BindingSource source = new BindingSource();
                 source.DataSource = null;
