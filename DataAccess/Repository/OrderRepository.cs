@@ -77,5 +77,18 @@ namespace DataAccess.Repository
             totalBill += order.Freight;
             return totalBill;
         }
+
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
+        }
+
+        public void CreateNoSave(Order o)
+        {
+            if (o is not null)
+            {
+                _db.Add(o);
+            }
+        }
     }
 }

@@ -24,7 +24,18 @@ namespace DataAccess.Repository
                 _db.SaveChanges();
             }
         }
+        public void CreateNoSave(Product p)
+        {
+            if (p is not null)
+            {
+                _db.Add(p);
+            }
+        }
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
 
+        }
         public Product Get(int id)
         {
             return this.AllProduct.SingleOrDefault(x => x.ProductId == id);

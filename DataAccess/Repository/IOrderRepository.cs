@@ -19,5 +19,7 @@ namespace DataAccess.Repository
 
         public DbSet<Order> GetOrders();
         public decimal? GetTotalBill(int orderID);
+        void SaveChanges();
+        void CreateNoSave(Order o);
     }
 }

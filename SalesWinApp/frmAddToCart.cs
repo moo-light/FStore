@@ -1,4 +1,4 @@
-﻿using BusinessObject.CartObject;
+using BusinessObject.CartObject;
 using BusinessObject.Models;
 using DataAccess.Repository;
 using DataAccess.Repository.dao;
@@ -22,23 +22,26 @@ namespace SalesWinApp
         private Product selectedProduct = null;
         private CartObject cartObj = new();
         private BindingSource _source = new BindingSource();
-        
+
+        public Member User { get; internal set; }
+
         public frmAddToCart()
         {
             InitializeComponent();
         }
 
         private void cboProducts_SelectedIndexChanged(object sender, EventArgs e)
-        { selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
+        {
+            selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
             txtProductName.Text = selectedProduct.ProductName;
-            txtProductPrice.Text= selectedProduct.UnitPrice.ToString();
+            txtProductPrice.Text = selectedProduct.UnitPrice.ToString();
             lbStock.Text = selectedProduct.UnitsInStock.ToString();
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
         {
             cartObj = new CartObject();
-            var proName = _products.Select(x=>x.ProductName).ToArray();
+            var proName = _products.Select(x => x.ProductName).ToArray();
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
             cboProducts.SelectedIndex = 0;
@@ -54,7 +57,7 @@ namespace SalesWinApp
             cartObj.AddToCart(selectedProduct.ProductId);
             selectedProduct.UnitsInStock -= 1;
             lbStock.Text = selectedProduct.UnitsInStock.ToString();
-
+            
 
         }
         private void LoadCartGridView()
@@ -102,6 +105,14 @@ namespace SalesWinApp
                 cartObj.RemoveFromCart(selectedProduct.ProductId);
                 LoadCartGridView();
             //}
+        }
+
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+                foreach (int productID in cartObj.Cart.Keys)
+            {
+
+            }
         }
     }
 }

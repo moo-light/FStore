@@ -16,5 +16,7 @@ namespace DataAccess.Repository
         void Update(Product p);
         void Remove(Product p);
         IEnumerable<Product> GetAllProducts();
+        void SaveChanges();
+        void CreateNoSave(Product p);
     }
 }

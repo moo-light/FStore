@@ -38,6 +38,17 @@ namespace DataAccess.Repository
                 _db.SaveChanges();
             }
         }
+        public void CreateNoSave(OrderDetail o)
+        {
+            if (o is not null)
+            {
+                _db.Add(o);
+            }
+        }
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
+        }
         public void Update(OrderDetail o)
         {
             if (o is not null)

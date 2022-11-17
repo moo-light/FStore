@@ -9,4 +9,6 @@ public interface IOrderDetailRepository
     void Create(OrderDetail o);
     void Update(OrderDetail o);
     void Remove(OrderDetail o);
+    void CreateNoSave(OrderDetail o);
+    void SaveChanges();
 }

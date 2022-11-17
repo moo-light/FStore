@@ -183,7 +183,9 @@ namespace SalesWinApp
         private void tsmMakeOrder_Click(object sender, EventArgs e)
         {
 
-            var childForm = new frmAddToCart() { };
+            var childForm = new frmAddToCart() {
+            User = User
+            };
             childForm.MdiParent = this;
             childForm.Show();
         }
