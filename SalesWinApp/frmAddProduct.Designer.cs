@@ -54,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 123);
+            this.label2.Location = new System.Drawing.Point(76, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(204, 120);
+            this.txtWeight.Location = new System.Drawing.Point(204, 111);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(225, 27);
             this.txtWeight.TabIndex = 3;
@@ -77,7 +77,7 @@
             // UnitPrice
             // 
             this.UnitPrice.AutoSize = true;
-            this.UnitPrice.Location = new System.Drawing.Point(76, 175);
+            this.UnitPrice.Location = new System.Drawing.Point(76, 153);
             this.UnitPrice.Name = "UnitPrice";
             this.UnitPrice.Size = new System.Drawing.Size(72, 20);
             this.UnitPrice.TabIndex = 4;
@@ -86,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 219);
+            this.label3.Location = new System.Drawing.Point(76, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(204, 175);
+            this.txtPrice.Location = new System.Drawing.Point(204, 153);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(225, 27);
             this.txtPrice.TabIndex = 6;
@@ -121,7 +121,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(204, 219);
+            this.txtStock.Location = new System.Drawing.Point(204, 198);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(225, 27);
             this.txtStock.TabIndex = 10;
@@ -129,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(76, 263);
+            this.label4.Location = new System.Drawing.Point(76, 248);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 11;
@@ -137,8 +137,9 @@
             // 
             // cboCategory
             // 
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(204, 260);
+            this.cboCategory.Location = new System.Drawing.Point(204, 245);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(225, 28);
             this.cboCategory.TabIndex = 12;
@@ -161,6 +162,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddProduct";
             this.Load += new System.EventHandler(this.frmAddProduct_Load);
             this.ResumeLayout(false);
