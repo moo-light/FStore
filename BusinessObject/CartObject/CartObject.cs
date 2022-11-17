@@ -9,6 +9,10 @@ namespace BusinessObject.CartObject
     public class CartObject
     {
         public Dictionary<int, int> Cart { get; set; }
+        public CartObject()
+        {
+            Cart = new Dictionary<int, int>();
+        }
         public  void AddToCart(int productID,int amount = 1) {
             if(Cart.ContainsKey(productID)){
                 Cart[productID] += amount;

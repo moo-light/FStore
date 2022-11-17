@@ -41,12 +41,16 @@ namespace SalesWinApp
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
             cboProducts.SelectedIndex = 0;
+            txtProductName.Enabled = false;
+            txtProductPrice.Enabled = false;
         }
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
             if (cartObj == null) cartObj = new CartObject();
             cartObj.AddToCart(selectedProduct.ProductId);
+            selectedProduct.UnitsInStock -= 1;
+            lbStock.Text = selectedProduct.UnitsInStock.ToString();
 
         }
 
