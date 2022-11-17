@@ -34,7 +34,8 @@ namespace SalesWinApp
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-
+            frmProduct frmProduct = new frmProduct();
+            frmProduct.Show();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
