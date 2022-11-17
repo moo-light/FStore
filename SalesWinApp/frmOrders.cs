@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
+using Xamarin.Forms;
 
 namespace SalesWinApp
 {
     public partial class frmOrders : Form
     {
-        string path = @"Data Sourc=(local); Initial Catalog = dbo.OrderDetail; Integrated Security=True";
+        string path = @"Data Sourc=(local); Initial Catalog = FStoreDB; Integrated Security=True";
         public frmOrders()
         {
             InitializeComponent();
@@ -29,10 +30,15 @@ namespace SalesWinApp
                 DataTable dt = new DataTable();
                 sqlData.Fill(dt);
 
-                DataView dv = new DataView();
-                
+                DataView dv = new DataView(dt);
+                dataGridView1.DataSource = dv;
                 
             }
+        }
+
+        private void btnClose1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

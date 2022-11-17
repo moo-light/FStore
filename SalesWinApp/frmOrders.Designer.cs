@@ -31,6 +31,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lbViewOrderDetail = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnClose1 = new System.Windows.Forms.Button();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,16 +73,26 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(897, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(553, 200);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnClose1
+            // 
+            this.btnClose1.Location = new System.Drawing.Point(462, 418);
+            this.btnClose1.Name = "btnClose1";
+            this.btnClose1.Size = new System.Drawing.Size(94, 29);
+            this.btnClose1.TabIndex = 3;
+            this.btnClose1.Text = "Close";
+            this.btnClose1.UseVisualStyleBackColor = true;
+            this.btnClose1.Click += new System.EventHandler(this.btnClose1_Click);
             // 
             // ProductID
             // 
             this.ProductID.HeaderText = "ProductID";
             this.ProductID.MinimumWidth = 6;
             this.ProductID.Name = "ProductID";
-            this.ProductID.Width = 125;
+            this.ProductID.Width = 130;
             // 
             // UnitPrice
             // 
@@ -95,7 +106,7 @@
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
+            this.Quantity.Width = 130;
             // 
             // Discount
             // 
@@ -108,7 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(602, 473);
+            this.Controls.Add(this.btnClose1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbViewOrderDetail);
             this.Controls.Add(this.btnClose);
@@ -126,6 +138,7 @@
         private Button btnClose;
         private Label lbViewOrderDetail;
         private DataGridView dataGridView1;
+        private Button btnClose1;
         private DataGridViewTextBoxColumn ProductID;
         private DataGridViewTextBoxColumn UnitPrice;
         private DataGridViewTextBoxColumn Quantity;
