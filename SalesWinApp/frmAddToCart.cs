@@ -87,5 +87,10 @@ namespace SalesWinApp
             }
 
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
