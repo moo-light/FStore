@@ -16,9 +16,11 @@ namespace SalesWinApp
 {
     public partial class frmAddToCart : Form
     {
-        private IProductRepository _product= new ProductRepository();
-        private CartObject cartObj = new CartObject();
+
+        IEnumerable<Product> _products = ProductDAO.GetAlls();
+
         private Product selectedProduct = null;
+        private CartObject cartObj = new();
         private BindingSource _source = new BindingSource();
         
         public frmAddToCart()
@@ -27,17 +29,20 @@ namespace SalesWinApp
         }
 
         private void cboProducts_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        { selectedProduct = _products.ToArray()[cboProducts.SelectedIndex];
+            txtProductName.Text = selectedProduct.ProductName;
+            txtProductPrice.Text= selectedProduct.UnitPrice.ToString();
+            lbStock.te
         }
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
         {
-            IEnumerable<Product> products = _product.GetAllProducts();
-            _source.DataSource = products;
-            selectedProduct = products.First();
-            var proName = products.Select(x=>x.ProductName).ToArray();
+            
+
+            var proName = _products.Select(x=>x.ProductName).ToArray();
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
+            cboProducts.SelectedIndex = 0;
         }
 
         private void btnAddCart_Click(object sender, EventArgs e)
