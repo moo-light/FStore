@@ -51,8 +51,10 @@ namespace SalesWinApp
                 MessageBox.Show("Login Failed");
                 return;
             }
-            if (user.Role.Equals("admin")){
-                frmAdmin frmAdmin = new frmAdmin(user);
+            if (user.Role.Equals("admin"))
+            {
+                frmAdmin frmAdmin = new frmAdmin();
+                frmAdmin.User = user;
                 this.Hide();
                 frmAdmin.Show();
             }
@@ -66,7 +68,7 @@ namespace SalesWinApp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Environment.Exit(1);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

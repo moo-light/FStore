@@ -36,7 +36,8 @@
             // 
             // btnMember
             // 
-            this.btnMember.Location = new System.Drawing.Point(36, 62);
+
+            this.btnMember.Location = new System.Drawing.Point(22, 169);
             this.btnMember.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnMember.Name = "btnMember";
             this.btnMember.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -47,8 +48,9 @@
             this.btnMember.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnProduct
-            // 
-            this.btnProduct.Location = new System.Drawing.Point(251, 62);
+
+            this.btnProduct.Location = new System.Drawing.Point(270, 169);
+
             this.btnProduct.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -60,7 +62,9 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(36, 151);
+
+            this.btnOrder.Location = new System.Drawing.Point(22, 259);
+
             this.btnOrder.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -71,7 +75,11 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(251, 151);
+
+            //this.btnReport.Location = new System.Drawing.Point(251, 151);
+
+            this.btnReport.Location = new System.Drawing.Point(270, 259);
+
             this.btnReport.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -94,6 +102,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAdmin";
             this.Text = "Admin Management";
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.ResumeLayout(false);
 
         }
