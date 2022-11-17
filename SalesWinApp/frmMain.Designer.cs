@@ -60,7 +60,7 @@
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMNewMember = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
@@ -339,7 +339,7 @@
             // toolStripMenuItem14
             // 
             this.toolStripMenuItem14.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem16,
+            this.btnMNewMember,
             this.toolStripMenuItem17,
             this.toolStripMenuItem18,
             this.toolStripMenuItem19,
@@ -350,10 +350,10 @@
             // 
             // toolStripMenuItem16
             // 
-            this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(190, 26);
-            this.toolStripMenuItem16.Text = "&Cascade";
-            this.toolStripMenuItem16.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
+            this.btnMNewMember.Name = "toolStripMenuItem16";
+            this.btnMNewMember.Size = new System.Drawing.Size(190, 26);
+            this.btnMNewMember.Text = "&Cascade";
+            this.btnMNewMember.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem17
             // 
