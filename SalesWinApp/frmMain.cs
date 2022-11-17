@@ -157,5 +157,11 @@ namespace SalesWinApp
             childForm.MdiParent = this;
             childForm.Show();
         }
+
+        private void Logout(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
+
+        }
     }
 }
