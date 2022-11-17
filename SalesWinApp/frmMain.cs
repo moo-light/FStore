@@ -179,5 +179,10 @@ namespace SalesWinApp
             childForm.MdiParent = this;
             childForm.Show();
         }
+
+        private void tsmMakeOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
