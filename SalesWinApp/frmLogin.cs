@@ -66,7 +66,7 @@ namespace SalesWinApp
             //}
             frmMain frmMain = new frmMain()
             {
-                
+                User = user
             };
             this.Hide();
             frmMain.ShowDialog();
@@ -82,7 +82,7 @@ namespace SalesWinApp
         {
             txtEmail.Text = "admin@fstore.com";
             txtPassword.Text = "admin@@";
-            btnLogin_Click(sender,e);
+            //btnLogin_Click(sender,e);
         }
     }
 }
