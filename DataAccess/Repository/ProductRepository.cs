@@ -26,13 +26,14 @@ namespace DataAccess.Repository
 
         public Product Get(int id)
         {
-            return this.GetAlls().SingleOrDefault(x => x.ProductId == id);
+            return this.GetAllProduct().SingleOrDefault(x => x.ProductId == id);
         }
 
-        public IEnumerable<Product> GetAlls()
+        public IEnumerable<Product> GetAllProduct()
         {
             return this._db.Products.ToList();
         }
+
 
         public void Remove(Product p)
         {

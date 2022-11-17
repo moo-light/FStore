@@ -1,5 +1,4 @@
-﻿using BusinessObject.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,28 +10,29 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class frmAdmin : Form
+    
+    public partial class frmManager : Form
     {
-        private Member user;
-
-        public Member User { get => user; set => user = value; }
-
-        public frmAdmin()
+        frmUser frmUser = new frmUser();
+        
+        public frmManager()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmUser.Show();
         }
 
-        private void frmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Show();
+
         }
 
-        private void btnProduct_Click(object sender, EventArgs e)
+        private void frmManager_Load(object sender, EventArgs e)
         {
 
         }
