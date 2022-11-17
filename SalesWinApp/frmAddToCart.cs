@@ -37,6 +37,7 @@ namespace SalesWinApp
 
         private void frmOrderAddDetail_Load(object sender, EventArgs e)
         {
+            cartObj = new CartObject();
             var proName = _products.Select(x=>x.ProductName).ToArray();
             cboProducts.Items.Clear();
             cboProducts.Items.AddRange(proName);
@@ -45,7 +46,6 @@ namespace SalesWinApp
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
-            if (cartObj == null) cartObj = new CartObject();
             cartObj.AddToCart(selectedProduct.ProductId);
             selectedProduct.UnitsInStock -= 1;
             lbStock.Text = selectedProduct.UnitsInStock.ToString();
@@ -56,10 +56,6 @@ namespace SalesWinApp
         {
             try
             {
-                cartObj.Cart = new Dictionary<int, int>();
-                cartObj.Cart.Add(2, 1);
-                cartObj.Cart.Add(5, 3);
-                cartObj.Cart.Add(3, 4);
                 var productList = new List<Product>();
                 foreach (int key in cartObj.Cart.Keys)
                 {
