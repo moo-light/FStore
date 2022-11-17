@@ -41,6 +41,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtChangePassword = new System.Windows.Forms.MaskedTextBox();
             this.txtRePassword = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
@@ -121,7 +123,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(128, 397);
+            this.btnUpdate.Location = new System.Drawing.Point(119, 429);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 10;
@@ -131,7 +133,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(269, 397);
+            this.btnCancel.Location = new System.Drawing.Point(269, 429);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 11;
@@ -141,7 +143,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 330);
+            this.label6.Location = new System.Drawing.Point(32, 377);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 12;
@@ -150,25 +152,46 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(186, 266);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(203, 27);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtPassword_MaskInputRejected);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 321);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Change Password";
+            // 
+            // txtChangePassword
+            // 
+            this.txtChangePassword.Location = new System.Drawing.Point(186, 314);
+            this.txtChangePassword.Name = "txtChangePassword";
+            this.txtChangePassword.Size = new System.Drawing.Size(203, 27);
+            this.txtChangePassword.TabIndex = 18;
+            this.txtChangePassword.PasswordChar = '*';
+            // 
             // txtRePassword
             // 
-            this.txtRePassword.Location = new System.Drawing.Point(186, 323);
+            this.txtRePassword.Location = new System.Drawing.Point(186, 370);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.Size = new System.Drawing.Size(203, 27);
-            this.txtRePassword.TabIndex = 15;
+            this.txtRePassword.TabIndex = 19;
+            this.txtRePassword.PasswordChar = '*';
             // 
             // frmUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 467);
+            this.ClientSize = new System.Drawing.Size(523, 507);
             this.Controls.Add(this.txtRePassword);
+            this.Controls.Add(this.txtChangePassword);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancel);
@@ -205,6 +228,8 @@
         private Button btnCancel;
         private Label label6;
         private MaskedTextBox txtPassword;
+        private Label label7;
+        private MaskedTextBox txtChangePassword;
         private MaskedTextBox txtRePassword;
     }
 }

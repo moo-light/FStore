@@ -69,7 +69,11 @@ namespace SalesWinApp
                 User = user
             };
             this.Hide();
-            frmMain.ShowDialog();
+            
+            if(frmMain.ShowDialog() == DialogResult.Abort)
+            {
+                this.Show();
+            }else 
             this.Close();
         }
 

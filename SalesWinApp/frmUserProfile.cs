@@ -49,8 +49,8 @@ namespace SalesWinApp
             User.City =  txtCity.Text;
             User.CompanyName= txtCompanyName.Text;
             User.Country = txtCountry.Text;
-            User.Password = txtPassword.Text;
-            if (!txtPassword.Text.Equals(txtRePassword.Text)) {
+            User.Password = txtChangePassword.Text;
+            if (!txtChangePassword.Text.Equals(txtRePassword.Text)) {
                 MessageBox.Show("Password not match");
             }
             else { 
