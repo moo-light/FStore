@@ -30,14 +30,7 @@ namespace SalesWinApp
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-          var context = txtSearchMem.Text;
-            LoadMemberAccount(context); 
-        }
-
-      
+              
         private void txtSearchMem_TextChanged(object sender, EventArgs e)
         {
 
@@ -51,8 +44,8 @@ namespace SalesWinApp
             }
             _bindingSrc = new BindingSource();
             _bindingSrc.DataSource = members;
-            dgvMembers.DataSource = null;
-            dgvMembers.DataSource = _bindingSrc;
+            dgvMember.DataSource = null;
+            dgvMember.DataSource = _bindingSrc;
 
         }
 
