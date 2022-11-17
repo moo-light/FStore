@@ -42,5 +42,15 @@ namespace SalesWinApp
             frmReport reportForm = new frmReport();
             reportForm.ShowDialog();
         }
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void btnMember_Click(object sender, EventArgs e)
+        {
+            frmMembers frmMembers = new frmMembers();
+            this.Hide();
+            frmMembers.Show();
+        }
     }
 }
