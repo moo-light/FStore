@@ -24,6 +24,8 @@ namespace SalesWinApp
         private void frmMembers_Load(object sender, EventArgs e)
         {
             LoadMember();
+            dgvMember.CellClick += dgvMember_CellContentClick;
+            btnDelete.Enabled = false;
         }
         private void LoadMember()
         {
@@ -88,7 +90,12 @@ namespace SalesWinApp
             if (confirmResult == DialogResult.Yes)
             {
                 var account = _repository.GetAlls().ToList()[dgvMember.CurrentRow.Index];
+                if(!account.Role.Equals("admin"))
                 _repository.Remove(account);
+                else
+                {
+                    MessageBox.Show("You Cant Remove Admin");
+                }
                 LoadMember();
             }
         }
@@ -96,6 +103,21 @@ namespace SalesWinApp
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void dgvMember_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMember.CurrentRow.Cells["Role"].Value.ToString().Equals("admin"))
+            {
+                btnDelete.Enabled = false;
+            }
+            else
+            {
+                btnDelete.Enabled = true;
+
+            }
         }
     }
 }
