@@ -1,6 +1,6 @@
 # Car Store Management Windows Forms Application
 
-:wave: Welcome to our Basic Cross-Platform Application Programming With .NET (PRN211) project.
+:wave: Welcome to our Basic Cross-Platform Application Programming With .NET (PRN211) project. :wave:
 
 ## Table of Contents
   - [Description](#description)
@@ -19,9 +19,7 @@
 ## Preview Screenshot
 
 <div align="center">
-<img src="./screenshots/00-fast-demo.gif" alt="Demo" width="100%"></img><br></br>
-  <img src="./screenshots/01-homapage-no-signin.png" alt="Home 1" width="45%"></img> &nbsp;&nbsp; <img src="./screenshots/01-homapage-signedin.png" alt="Home 2" width="45%"></img>
-  
+  <img src="./screenshot/login.png" alt="Login" width="45%"></img> &nbsp;&nbsp; <img src="./screenshot/admin_default_screen.png" alt="Home" width="45%"></img> &nbsp;&nbsp; <img src="./screenshot/admin_MemberManagement.png" alt="Member Mng" width="45%"></img> &nbsp;&nbsp; <img src="./screenshot/admin_productManagement.png" alt="product mng" width="45%"></img> &nbsp;&nbsp; <img src="./screenshot/admin_viewReport.png" alt="Reports" width="45%"></img> &nbsp;&nbsp; <img src="./screenshot/admin_addToCart.png" alt="Add To Cart" width="45%"></img>  
 </div>
   
 ## Technology
