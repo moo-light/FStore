@@ -1,6 +1,6 @@
 # Car Store Management Windows Forms Application
 
-:wave: Welcome to our Basic Cross-Platform Application Programming With .NET (PRN211) project :wave:
+:wave: Welcome to our Basic Cross-Platform Application Programming With .NET (PRN211) project.
 
 ## Table of Contents
   - [Description](#description)
